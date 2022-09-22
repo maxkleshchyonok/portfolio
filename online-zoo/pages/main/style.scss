@@ -1,0 +1,74 @@
+$black-color: rgba(0,0,0,1);
+header {
+  position: absolute;
+  width: 1600px;
+  height: 80px;
+  left: 0px;
+  top: 0px;
+  z-index: 5;
+  background-color: $black-color;
+  backdrop-filter: blur(2px);
+  font-family: Roboto;
+  .logo-rectang {
+    width: 82px;
+    height: 52px;
+    margin-left: 30px;
+    margin-top: 14px;
+    color: rgba(255,255,255,1);
+    border: 1px solid #FFFFFF;
+    border-radius: 2px;
+    .logo-text{
+      box-sizing: border-box;
+      margin: 3.55px 4.75px 3.55px 4.75px;
+      width: 72.49px;
+      height: 44.91px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 19.0145px;
+      line-height: 120%;
+      text-align: center;
+      color: #FFFFFF;
+      .bamboo{
+        position: absolute;
+        margin-left: 4.8px;
+        margin-top: 17.9px;
+      }
+    }
+  }
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+    width: 1300px;
+    margin-left: 200px;
+    margin-top: -35px;
+     a{
+      color: #FFFFFF;
+       cursor: pointer;
+       margin-right: 48px;
+    }
+    .designed{
+        margin-left: auto;
+    }
+  }
+}
+.bigpanda {
+  width: 1600px;
+  height: 584px;
+  margin-left: -8px;
+}
+.ellips{
+  position: absolute;
+  margin-top: -500px;
+  margin-left: 800px;
+}
+.big-slogan{
+  //position: absolute;
+  font-weight: 700;
+  color: #FFFFFF;
+  width: 500.31px;
+  height: 400px;
+  font-size: 106.496px;
+  line-height: 80px;
+  text-align: center;
+  text-transform: uppercase;
+}
