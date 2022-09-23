@@ -1,0 +1,144 @@
+header {
+  position: absolute;
+  width: 1600px;
+  height: 80px;
+  left: 0px;
+  top: 0px;
+  z-index: 5;
+  background-color: rgb(0, 0, 0);
+  backdrop-filter: blur(2px);
+  font-family: Roboto;
+}
+header .logo-rectang {
+  width: 81px;
+  height: 50px;
+  margin-left: 219px;
+  margin-top: 14px;
+  color: rgb(255, 255, 255);
+  border: 1px solid #FFFFFF;
+  border-radius: 2px;
+}
+header .logo-rectang .logo-text {
+  box-sizing: border-box;
+  margin: 3.55px 4.75px 3.55px 4.75px;
+  width: 72.49px;
+  height: 44.91px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19.0145px;
+  line-height: 120%;
+  text-align: center;
+  color: #FFFFFF;
+}
+header .logo-rectang .logo-text .bamboo {
+  position: absolute;
+  margin-left: 4.8px;
+  margin-top: 17.9px;
+}
+header .navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 1072px;
+  margin-left: 365px;
+  margin-top: -36px;
+}
+header .navbar a {
+  color: #FFFFFF;
+  cursor: pointer;
+  margin-right: 58px;
+}
+header .navbar .designed {
+  margin-left: auto;
+}
+
+.bigpanda {
+  width: 1600px;
+  height: 770px;
+  margin-left: -8px;
+}
+
+.ellips {
+  position: absolute;
+  width: 465px;
+  height: 465px;
+  margin-top: -689px;
+  margin-left: 800px;
+}
+
+.big-slogan {
+  position: absolute;
+  margin-left: 870px;
+  margin-top: -618px;
+  font-weight: 700;
+  color: #FFFFFF;
+  width: 500.31px;
+  height: 400px;
+  font-size: 106.496px;
+  font-style: normal;
+  font-family: Roboto;
+  line-height: 80px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.yellow {
+  color: rgb(255, 238, 46);
+}
+
+html {
+  overflow-x: hidden;
+}
+
+.oldMan {
+  margin-top: 140px;
+  margin-left: 220px;
+  width: 500px;
+  height: 403px;
+}
+
+.info-text {
+  margin-left: 800px;
+  margin-top: -450px;
+  display: flex;
+  flex-flow: column;
+  font-family: "Roboto";
+  font-style: normal;
+  color: #333B41;
+}
+.info-text .title {
+  width: 465px;
+  height: 116px;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 120%;
+}
+.info-text .small-par {
+  width: 465px;
+  height: 42px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+}
+.info-text .how-it {
+  width: 217px;
+  height: 29px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+}
+.info-text .big-par {
+  width: 465px;
+  height: 105px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.up-left-flower {
+  width: 293px;
+  height: 605px;
+  margin-left: 1300px;
+  margin-top: -500px;
+}
+
+/*# sourceMappingURL=style.css.map */

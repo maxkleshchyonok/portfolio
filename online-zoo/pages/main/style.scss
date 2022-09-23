@@ -10,9 +10,9 @@ header {
   backdrop-filter: blur(2px);
   font-family: Roboto;
   .logo-rectang {
-    width: 82px;
-    height: 52px;
-    margin-left: 30px;
+    width: 81px;
+    height: 50px;
+    margin-left: 219px;
     margin-top: 14px;
     color: rgba(255,255,255,1);
     border: 1px solid #FFFFFF;
@@ -38,13 +38,13 @@ header {
   .navbar{
     display: flex;
     justify-content: space-between;
-    width: 1300px;
-    margin-left: 200px;
-    margin-top: -35px;
+    width: 1072px;
+    margin-left: 365px;
+    margin-top: -36px;
      a{
       color: #FFFFFF;
        cursor: pointer;
-       margin-right: 48px;
+       margin-right: 58px;
     }
     .designed{
         margin-left: auto;
@@ -53,22 +53,83 @@ header {
 }
 .bigpanda {
   width: 1600px;
-  height: 584px;
+  height: 770px;
   margin-left: -8px;
 }
 .ellips{
   position: absolute;
-  margin-top: -500px;
+  width: 465px;
+  height: 465px;
+  margin-top: -689px;
   margin-left: 800px;
 }
 .big-slogan{
-  //position: absolute;
+  position: absolute;
+  margin-left: 870px;
+  margin-top: -618px;
   font-weight: 700;
   color: #FFFFFF;
   width: 500.31px;
   height: 400px;
   font-size: 106.496px;
+  font-style: normal;
+  font-family: Roboto;
   line-height: 80px;
   text-align: center;
   text-transform: uppercase;
+}
+.yellow{
+  color: rgba(255, 238, 46, 1);
+}
+html{
+  overflow-x: hidden;
+}
+.oldMan{
+  margin-top: 140px;
+  margin-left: 220px;
+  width: 500px;
+  height: 403px;
+}
+.info-text{
+  margin-left: 800px;
+  margin-top: -450px;
+  display: flex;
+  flex-flow: column;
+  font-family: 'Roboto';
+  font-style: normal;
+  color: #333B41;
+  .title{
+    width: 465px;
+    height: 116px;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 120%;
+  }
+  .small-par{
+    width: 465px;
+    height: 42px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+  }
+  .how-it{
+    width: 217px;
+    height: 29px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+  }
+  .big-par{
+    width: 465px;
+    height: 105px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+  }
+}
+.up-left-flower{
+  width: 293px;
+  height: 605px;
+  margin-left: 1300px;
+  margin-top: -500px;
 }
