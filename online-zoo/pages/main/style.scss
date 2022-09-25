@@ -550,3 +550,201 @@ html{
     color: #BDBDBD;
   }
   }
+.feedback{
+  margin-left: 200px;
+  margin-top: -100px;
+  width: 298px;
+  height: 54px;
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  border-radius: 5px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer{
+  bottom: 0px;
+  width: 1600px;
+  height: 443px;
+  margin-left: -8px;
+  margin-top: 100px;
+  background: #111115;
+  .logo-rectang {
+    position: absolute;
+    width: 81px;
+    height: 50px;
+    margin-left: 219px;
+    margin-top: 100px;
+    color: rgba(255,255,255,1);
+    border: 1px solid #FFFFFF;
+    border-radius: 2px;
+    .logo-text{
+      box-sizing: border-box;
+      margin: 3.55px 4.75px 3.55px 4.75px;
+      width: 72.49px;
+      height: 44.91px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 19.0145px;
+      line-height: 120%;
+      text-align: center;
+      color: #FFFFFF;
+      .bamboo{
+        position: absolute;
+        margin-left: 4.8px;
+        margin-top: 17.9px;
+      }
+    }
+  }
+  .subscribe{
+    position: absolute;
+    font-family: 'Roboto';
+    font-style: normal;
+    margin-top: 60px;
+    margin-left: 1000px;
+    h1{
+      width: 250px;
+      height: 29px;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 120%;
+      color: #FFFFFF;
+    }
+    .form{
+      width: 300px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .formRectan{
+        margin-right: 20px;
+        height: 42px;
+        width: 228px;
+        border-radius: 2px;
+        border: 0.7px solid rgba(249, 128, 75, 1);
+        display: flex;
+        align-items: center;
+          p{
+            margin-left: 5px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 140%;
+            color: #BDBDBD;
+          }
+      }
+      .submit{
+        height: 42px;
+        width: 129px;
+        background: #F1F3F2;
+        border: 1px solid #4B9200;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+          h3{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 140%;
+            color: #4B9200;
+          }
+      }
+    }
+  }
+  .donate{
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 100px;
+    width: 298px;
+    height: 54px;
+    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1{
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 140%;
+      text-align: center;
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
+  }
+  .social{
+    position: absolute;
+    margin-top: 270px;
+    margin-left: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    .each{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 110px;
+      font-family: 'Roboto';
+      font-style: normal;
+      margin-bottom: 10px;
+      .bg-elips{
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: rgba(196, 196, 196, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .social-name{
+        width: 73px;
+        height: 21px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        font-weight: 400;
+        color: #FFFFFF;
+      }
+    }
+  }
+  .footer-bar{
+    position: absolute;
+    margin-left: 490px;
+    margin-top: 380px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    a {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+      color: #FFFFFF;
+    }
+  }
+  .designed-by{
+    position: absolute;
+    margin-top: 370px;
+    margin-left: 1000px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 100;
+    width: 260px;
+    p{
+      font-size: 16px;
+      line-height: 130%;
+      color: #FFFFFF;
+      margin-top: -20px;
+    }
+  }
+}
