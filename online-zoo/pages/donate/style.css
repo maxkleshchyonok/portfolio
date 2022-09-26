@@ -72,13 +72,41 @@ header .navbar .designed {
   background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
   opacity: 0.9;
 }
+.pick-feed .info-text {
+  position: absolute;
+  margin-top: -1070px;
+  font-family: "Roboto";
+  font-style: normal;
+  margin-bottom: 100px;
+}
+.pick-feed .info-text .donate-title {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 47px;
+  color: #FFFFFF;
+}
+.pick-feed .info-text .donate-info-text {
+  margin-top: -12px;
+  margin-bottom: 45px;
+  width: 1160px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+}
+.pick-feed .info-text .donate-info-title {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 47px;
+  color: #FE9013;
+}
 .pick-feed .inner-window {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin-left: -14px;
-  margin-top: -30px;
+  margin-left: -5px;
+  margin-top: 155px;
   height: 964px;
   width: 1160px;
   left: 220px;
@@ -90,6 +118,8 @@ header .navbar .designed {
   backdrop-filter: blur(2px);
 }
 .pick-feed .inner-window .pick-title {
+  margin-top: 45px;
+  margin-left: -5px;
   width: 550px;
   height: 58px;
   font-weight: 400;
@@ -99,6 +129,8 @@ header .navbar .designed {
   color: #FE9013;
 }
 .pick-feed .inner-window .first-parag {
+  margin-top: -30px;
+  margin-left: -115px;
   width: 860px;
   height: 29px;
   font-weight: 400;
@@ -108,16 +140,22 @@ header .navbar .designed {
   text-align: center;
 }
 .pick-feed .inner-window .animal-diet {
+  margin-top: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 50px;
 }
 .pick-feed .inner-window .animal-diet .diet-info {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  margin-left: 33px;
 }
 .pick-feed .inner-window .animal-diet .diet-info h1 {
+  margin-top: 45px;
+  margin-left: -43px;
   font-weight: 500;
   font-size: 72px;
   line-height: 80%;
@@ -126,20 +164,29 @@ header .navbar .designed {
   color: #000000;
 }
 .pick-feed .inner-window .animal-diet .diet-info p {
+  margin-top: -40px;
+  margin-left: -42px;
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
   text-align: center;
   color: #333B41;
 }
-.pick-feed .inner-window .animal-diet img {
-  margin-left: 20px;
+.pick-feed .inner-window .animal-diet .multiply {
+  margin-left: 8px;
+  margin-right: 30px;
+}
+.pick-feed .inner-window .animal-diet .small-panda {
+  margin-left: 30px;
+  margin-top: -25px;
 }
 .pick-feed .inner-window .scroll {
   width: 976px;
   height: 27px;
   background: #404950;
   border-radius: 2px;
+  margin-bottom: 40px;
+  margin-top: 20px;
 }
 .pick-feed .inner-window input::-webkit-outer-spin-button,
 .pick-feed .inner-window input::-webkit-inner-spin-button {
@@ -152,6 +199,7 @@ header .navbar .designed {
   color: #929699;
 }
 .pick-feed .inner-window .amount {
+  margin-top: 40px;
   box-sizing: border-box;
   height: 54px;
   width: 268px;
@@ -160,6 +208,7 @@ header .navbar .designed {
   background: transparent;
   border-radius: 2px;
   outline: none;
+  margin-bottom: 30px;
 }
 .pick-feed .inner-window .dollar {
   position: absolute;
@@ -169,15 +218,17 @@ header .navbar .designed {
 .pick-feed .inner-window .radio-buttons {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 5px;
+  margin-left: 29px;
+  margin-top: -35px;
+  margin-bottom: 15px;
 }
 .pick-feed .inner-window .radio-buttons label {
-  margin-right: 15px;
   margin-top: 5px;
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
   color: #333B41;
+  margin-right: 44px;
 }
 .pick-feed .inner-window .radio-buttons input {
   -webkit-appearance: none;
@@ -189,7 +240,7 @@ header .navbar .designed {
   border: 1px solid #FE9013;
   transition: 0.2s all linear;
   outline: none;
-  margin-right: 5px;
+  margin-right: 9px;
   position: relative;
   top: 4px;
 }
@@ -215,12 +266,15 @@ header .navbar .designed {
   outline: 1px solid black;
 }
 .pick-feed .inner-window .share {
+  margin-top: 15px;
+  margin-bottom: 60px;
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
   color: #333B41;
 }
 .pick-feed .inner-window .feed-button {
+  margin-left: 10px;
   border: none;
   height: 54px;
   width: 298px;
