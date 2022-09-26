@@ -86,6 +86,8 @@ header .navbar .active {
 }
 
 .watch-button {
+  border: none;
+  cursor: pointer;
   position: absolute;
   margin-left: 10px;
   width: 298px;
@@ -270,6 +272,8 @@ html {
   z-index: 5;
 }
 .slide-cards .arrow-buttons {
+  border: none;
+  cursor: pointer;
   margin-left: -20px;
   width: 62px;
   height: 62px;
@@ -385,6 +389,10 @@ html {
   margin-left: -85px;
   margin-top: -7px;
 }
+.pick-feed .inner-window .second-para a {
+  color: #333B41;
+  text-decoration-color: rgb(254, 144, 19);
+}
 .pick-feed .inner-window .how-title {
   width: 220px;
   height: 47px;
@@ -439,6 +447,7 @@ html {
   color: #333B41;
 }
 .pick-feed .inner-window .feed-button {
+  cursor: pointer;
   margin-top: 45px;
   border: none;
   height: 54px;
@@ -575,6 +584,8 @@ html {
 }
 
 .feedback {
+  border: none;
+  cursor: pointer;
   margin-left: 212px;
   margin-top: -180px;
   width: 298px;
@@ -611,7 +622,10 @@ footer {
   margin-top: 180px;
   background: #111115;
 }
-footer .logo-rectang {
+footer .foot-logo-href {
+  text-decoration: none;
+}
+footer .foot-logo-href .logo-rectang {
   position: absolute;
   width: 81px;
   height: 50px;
@@ -621,7 +635,7 @@ footer .logo-rectang {
   border: 1px solid #FFFFFF;
   border-radius: 2px;
 }
-footer .logo-rectang .logo-text {
+footer .foot-logo-href .logo-rectang .logo-text {
   box-sizing: border-box;
   margin: 3px 4.75px 3.55px 4.75px;
   width: 72.49px;
@@ -634,7 +648,7 @@ footer .logo-rectang .logo-text {
   text-align: center;
   color: #FFFFFF;
 }
-footer .logo-rectang .logo-text .bamboo {
+footer .foot-logo-href .logo-rectang .logo-text .bamboo {
   position: absolute;
   margin-left: 4.8px;
   margin-top: 17.9px;
@@ -697,6 +711,8 @@ footer .subscribe .form .submit h3 {
   color: #4B9200;
 }
 footer .donate {
+  border: none;
+  cursor: pointer;
   position: absolute;
   margin-top: 160px;
   margin-left: 220px;
@@ -728,15 +744,18 @@ footer .social {
   align-items: center;
 }
 footer .social .each {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 110px;
   font-family: "Roboto";
   font-style: normal;
   margin-bottom: 10px;
 }
-footer .social .each .bg-elips {
+footer .social .each a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+}
+footer .social .each a .bg-elips {
   width: 26px;
   height: 26px;
   border-radius: 50%;
@@ -745,7 +764,7 @@ footer .social .each .bg-elips {
   justify-content: center;
   align-items: center;
 }
-footer .social .each .social-name {
+footer .social .each a .social-name {
   width: 73px;
   height: 21px;
   font-weight: 400;
@@ -763,6 +782,10 @@ footer .footer-bar {
   align-items: center;
   width: 365px;
 }
+footer .footer-bar .active-footer {
+  color: #F9804B;
+  cursor: default;
+}
 footer .footer-bar a {
   font-family: "Roboto";
   font-style: normal;
@@ -770,6 +793,7 @@ footer .footer-bar a {
   font-size: 16px;
   line-height: 140%;
   color: #FFFFFF;
+  cursor: pointer;
 }
 footer .designed-by {
   position: absolute;

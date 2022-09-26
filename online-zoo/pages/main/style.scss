@@ -84,6 +84,8 @@ header {
   text-transform: uppercase;
 }
 .watch-button{
+  border: none;
+  cursor: pointer;
   position: absolute;
   margin-left: 10px;
   width: 298px;
@@ -272,6 +274,8 @@ html{
     }
   }
   .arrow-buttons {
+    border: none;
+    cursor: pointer;
     margin-left: -20px;
     width: 62px;
     height: 62px;
@@ -383,6 +387,10 @@ html{
       color: #333B41;
       margin-left: -85px;
       margin-top: -7px;
+      a{
+        color: #333B41;
+        text-decoration-color: rgba(254, 144, 19, 1);
+      }
     }
     .how-title{
       width: 220px;
@@ -441,6 +449,7 @@ html{
       }
     }
     .feed-button{
+      cursor: pointer;
       margin-top: 45px;
       border: none;
       height: 54px;
@@ -587,6 +596,8 @@ html{
   }
   }
 .feedback{
+  border: none;
+  cursor: pointer;
   margin-left: 212px;
   margin-top: -180px;
   width: 298px;
@@ -620,7 +631,9 @@ footer{
   margin-left: -8px;
   margin-top: 180px;
   background: #111115;
-  .logo-rectang {
+  .foot-logo-href{
+    text-decoration: none;
+    .logo-rectang {
     position: absolute;
     width: 81px;
     height: 50px;
@@ -647,7 +660,8 @@ footer{
         margin-top: 17.9px;
       }
     }
-  }
+  }}
+
   .subscribe{
     position: absolute;
     font-family: 'Roboto';
@@ -706,6 +720,8 @@ footer{
     }
   }
   .donate{
+    border: none;
+    cursor: pointer;
     position: absolute;
     margin-top: 160px;
     margin-left: 220px;
@@ -736,31 +752,53 @@ footer{
     justify-content: space-between;
     align-items: center;
     .each{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+
       width: 110px;
       font-family: 'Roboto';
       font-style: normal;
       margin-bottom: 10px;
-      .bg-elips{
-        width: 26px;
-        height: 26px;
-        border-radius: 50%;
-        background: rgba(196, 196, 196, 0.5);
+      a{
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
+        text-decoration: none;
+        .bg-elips{
+          width: 26px;
+          height: 26px;
+          border-radius: 50%;
+          background: rgba(196, 196, 196, 0.5);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .social-name{
+          width: 73px;
+          height: 21px;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 140%;
+          font-weight: 400;
+          color: #FFFFFF;
+        }
       }
-      .social-name{
-        width: 73px;
-        height: 21px;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 140%;
-        font-weight: 400;
-        color: #FFFFFF;
-      }
+      //.bg-elips{
+      //  width: 26px;
+      //  height: 26px;
+      //  border-radius: 50%;
+      //  background: rgba(196, 196, 196, 0.5);
+      //  display: flex;
+      //  justify-content: center;
+      //  align-items: center;
+      //}
+      //.social-name{
+      //  width: 73px;
+      //  height: 21px;
+      //  font-weight: 400;
+      //  font-size: 16px;
+      //  line-height: 140%;
+      //  font-weight: 400;
+      //  color: #FFFFFF;
+      //}
     }
   }
   .footer-bar{
@@ -771,6 +809,10 @@ footer{
     justify-content: space-between;
     align-items: center;
     width: 365px;
+    .active-footer{
+      color: #F9804B;
+      cursor: default;
+    }
     a {
       font-family: 'Roboto';
       font-style: normal;
@@ -778,6 +820,7 @@ footer{
       font-size: 16px;
       line-height: 140%;
       color: #FFFFFF;
+      cursor: pointer;
     }
   }
   .designed-by{

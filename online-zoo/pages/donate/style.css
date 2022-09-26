@@ -9,7 +9,10 @@ header {
   backdrop-filter: blur(2px);
   font-family: Roboto;
 }
-header .logo-rectang {
+header .logo-href {
+  text-decoration: none;
+}
+header .logo-href .logo-rectang {
   width: 81px;
   height: 50px;
   margin-left: 219px;
@@ -18,7 +21,7 @@ header .logo-rectang {
   border: 1px solid #FFFFFF;
   border-radius: 2px;
 }
-header .logo-rectang .logo-text {
+header .logo-href .logo-rectang .logo-text {
   box-sizing: border-box;
   margin: 3.55px 4.75px 3.55px 4.75px;
   width: 72.49px;
@@ -30,7 +33,7 @@ header .logo-rectang .logo-text {
   text-align: center;
   color: #FFFFFF;
 }
-header .logo-rectang .logo-text .bamboo {
+header .logo-href .logo-rectang .logo-text .bamboo {
   position: absolute;
   margin-left: 4.8px;
   margin-top: 17.9px;
@@ -278,6 +281,7 @@ header .navbar .designed {
   color: #333B41;
 }
 .pick-feed .inner-window .feed-button {
+  cursor: pointer;
   margin-left: 10px;
   border: none;
   height: 54px;
@@ -307,7 +311,10 @@ footer {
   margin-left: -8px;
   background: #111115;
 }
-footer .logo-rectang {
+footer .foot-logo-href {
+  text-decoration: none;
+}
+footer .foot-logo-href .logo-rectang {
   position: absolute;
   width: 81px;
   height: 50px;
@@ -317,7 +324,7 @@ footer .logo-rectang {
   border: 1px solid #FFFFFF;
   border-radius: 2px;
 }
-footer .logo-rectang .logo-text {
+footer .foot-logo-href .logo-rectang .logo-text {
   box-sizing: border-box;
   margin: 3px 4.75px 3.55px 4.75px;
   width: 72.49px;
@@ -330,7 +337,7 @@ footer .logo-rectang .logo-text {
   text-align: center;
   color: #FFFFFF;
 }
-footer .logo-rectang .logo-text .bamboo {
+footer .foot-logo-href .logo-rectang .logo-text .bamboo {
   position: absolute;
   margin-left: 4.8px;
   margin-top: 17.9px;
@@ -424,15 +431,18 @@ footer .social {
   align-items: center;
 }
 footer .social .each {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 110px;
   font-family: "Roboto";
   font-style: normal;
   margin-bottom: 10px;
 }
-footer .social .each .bg-elips {
+footer .social .each a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+}
+footer .social .each a .bg-elips {
   width: 26px;
   height: 26px;
   border-radius: 50%;
@@ -441,7 +451,7 @@ footer .social .each .bg-elips {
   justify-content: center;
   align-items: center;
 }
-footer .social .each .social-name {
+footer .social .each a .social-name {
   width: 73px;
   height: 21px;
   font-weight: 400;
@@ -460,6 +470,8 @@ footer .footer-bar {
   width: 365px;
 }
 footer .footer-bar a {
+  cursor: pointer;
+  text-decoration: none;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
