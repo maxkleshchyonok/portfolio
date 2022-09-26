@@ -524,8 +524,8 @@ html {
 }
 
 .feedback {
-  margin-left: 200px;
-  margin-top: -100px;
+  margin-left: 212px;
+  margin-top: -180px;
   width: 298px;
   height: 54px;
   background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
@@ -543,12 +543,21 @@ html {
   align-items: center;
 }
 
+.ficus {
+  position: absolute;
+  margin-left: 1345px;
+  margin-top: -93px;
+  z-index: 1;
+}
+
 footer {
+  position: relative;
+  z-index: 5;
   bottom: 0px;
   width: 1600px;
   height: 443px;
   margin-left: -8px;
-  margin-top: 100px;
+  margin-top: 180px;
   background: #111115;
 }
 footer .logo-rectang {
@@ -556,16 +565,17 @@ footer .logo-rectang {
   width: 81px;
   height: 50px;
   margin-left: 219px;
-  margin-top: 100px;
+  margin-top: 40px;
   color: rgb(255, 255, 255);
   border: 1px solid #FFFFFF;
   border-radius: 2px;
 }
 footer .logo-rectang .logo-text {
   box-sizing: border-box;
-  margin: 3.55px 4.75px 3.55px 4.75px;
+  margin: 3px 4.75px 3.55px 4.75px;
   width: 72.49px;
   height: 44.91px;
+  font-family: Roboto;
   font-style: normal;
   font-weight: 400;
   font-size: 19.0145px;
@@ -582,8 +592,8 @@ footer .subscribe {
   position: absolute;
   font-family: "Roboto";
   font-style: normal;
-  margin-top: 60px;
-  margin-left: 1000px;
+  margin-top: 25px;
+  margin-left: 1010px;
 }
 footer .subscribe h1 {
   width: 250px;
@@ -594,28 +604,32 @@ footer .subscribe h1 {
   color: #FFFFFF;
 }
 footer .subscribe .form {
-  width: 300px;
+  width: 370px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 footer .subscribe .form .formRectan {
   margin-right: 20px;
-  height: 42px;
-  width: 228px;
+  margin-top: -4px;
+  margin-left: 3px;
+  height: 40px;
+  width: 227px;
   border-radius: 2px;
   border: 0.7px solid rgb(249, 128, 75);
   display: flex;
   align-items: center;
 }
 footer .subscribe .form .formRectan p {
-  margin-left: 5px;
+  margin-left: 8px;
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
   color: #BDBDBD;
 }
 footer .subscribe .form .submit {
+  margin-left: -25px;
+  margin-top: -5px;
   height: 42px;
   width: 129px;
   background: #F1F3F2;
@@ -633,8 +647,8 @@ footer .subscribe .form .submit h3 {
 }
 footer .donate {
   position: absolute;
-  margin-top: 200px;
-  margin-left: 100px;
+  margin-top: 160px;
+  margin-left: 220px;
   width: 298px;
   height: 54px;
   background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
@@ -644,6 +658,8 @@ footer .donate {
   align-items: center;
 }
 footer .donate h1 {
+  font-family: "Roboto";
+  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 140%;
@@ -653,8 +669,8 @@ footer .donate h1 {
 }
 footer .social {
   position: absolute;
-  margin-top: 270px;
-  margin-left: 90px;
+  margin-top: 259px;
+  margin-left: 221px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -689,12 +705,12 @@ footer .social .each .social-name {
 }
 footer .footer-bar {
   position: absolute;
-  margin-left: 490px;
-  margin-top: 380px;
+  margin-left: 617px;
+  margin-top: 372px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 400px;
+  width: 365px;
 }
 footer .footer-bar a {
   font-family: "Roboto";
@@ -706,8 +722,8 @@ footer .footer-bar a {
 }
 footer .designed-by {
   position: absolute;
-  margin-top: 370px;
-  margin-left: 1000px;
+  margin-top: 350px;
+  margin-left: 1152px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -720,7 +736,7 @@ footer .designed-by p {
   font-size: 16px;
   line-height: 130%;
   color: #FFFFFF;
-  margin-top: -20px;
+  margin-top: -7px;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.scss.map */
