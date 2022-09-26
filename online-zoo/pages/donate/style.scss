@@ -45,6 +45,10 @@ header {
       color: #FFFFFF;
       cursor: pointer;
       margin-right: 58px;
+      text-decoration: none;
+    }
+    .active{
+      color: rgba(249, 128, 75, 1);
     }
     .designed{
       margin-left: auto;

@@ -46,6 +46,10 @@ header .navbar a {
   color: #FFFFFF;
   cursor: pointer;
   margin-right: 58px;
+  text-decoration: none;
+}
+header .navbar .active {
+  color: rgb(249, 128, 75);
 }
 header .navbar .designed {
   margin-left: auto;

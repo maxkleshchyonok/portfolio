@@ -1,4 +1,3 @@
-@charset "UTF-8";
 header {
   position: absolute;
   width: 1600px;
@@ -47,9 +46,13 @@ header .navbar a {
   color: #FFFFFF;
   cursor: pointer;
   margin-right: 58px;
+  text-decoration: none;
 }
 header .navbar .designed {
   margin-left: auto;
+}
+header .navbar .active {
+  color: rgb(249, 128, 75);
 }
 
 .bigpanda {
@@ -80,6 +83,29 @@ header .navbar .designed {
   line-height: 80px;
   text-align: center;
   text-transform: uppercase;
+}
+
+.watch-button {
+  position: absolute;
+  margin-left: 10px;
+  width: 298px;
+  height: 54px;
+  left: calc(50% - 149px + 332px);
+  top: 626px;
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.watch-button h1 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: #FFFFFF;
 }
 
 .yellow {
@@ -306,7 +332,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: -14px;
+  margin-left: -5px;
   margin-top: -30px;
   height: 835px;
   width: 1160px;
@@ -319,6 +345,8 @@ html {
   backdrop-filter: blur(2px);
 }
 .pick-feed .inner-window .pick-title {
+  margin-top: -20px;
+  margin-left: 10px;
   width: 550px;
   height: 58px;
   font-weight: 400;
@@ -328,6 +356,8 @@ html {
   color: #FE9013;
 }
 .pick-feed .inner-window .first-parag {
+  margin-top: -1px;
+  margin-left: -100px;
   width: 860px;
   height: 29px;
   font-weight: 400;
@@ -343,14 +373,17 @@ html {
   font-size: 16px;
   line-height: 130%;
   color: #333B41;
+  margin-left: 100px;
 }
 .pick-feed .inner-window .second-para {
-  width: 863px;
+  width: 880px;
   height: 42px;
   font-weight: 400;
   font-size: 16px;
   line-height: 130%;
   color: #333B41;
+  margin-left: -85px;
+  margin-top: -7px;
 }
 .pick-feed .inner-window .how-title {
   width: 220px;
@@ -359,15 +392,20 @@ html {
   font-size: 36px;
   line-height: 130%;
   color: #333B41;
+  margin-top: 45px;
+  margin-left: 20px;
 }
 .pick-feed .inner-window .schema {
-  width: 750px;
+  margin-left: 37px;
+  width: 900px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 .pick-feed .inner-window .schema div {
+  margin-right: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -377,8 +415,17 @@ html {
   border-radius: 5px;
   border: 1px solid rgb(254, 144, 19);
 }
+.pick-feed .inner-window .schema div img {
+  margin-left: 30px;
+}
+.pick-feed .inner-window .schema img {
+  margin-right: 30px;
+  margin-top: -15px;
+}
 .pick-feed .inner-window .instructions {
-  width: 650px;
+  margin-top: 15px;
+  margin-left: 5px;
+  width: 760px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -392,6 +439,7 @@ html {
   color: #333B41;
 }
 .pick-feed .inner-window .feed-button {
+  margin-top: 45px;
   border: none;
   height: 54px;
   width: 298px;
@@ -453,8 +501,8 @@ html {
   box-sizing: border-box;
   color: #FFF;
   background: #F1F3F2;
-  background-clip: padding-box; /* !importanté */
-  border: solid 2px transparent; /* !importanté */
+  background-clip: padding-box;
+  border: solid 2px transparent;
   border-radius: 1em;
 }
 .testi-cards .gradient-box:before {
@@ -465,8 +513,8 @@ html {
   bottom: 0;
   left: 0;
   z-index: -1;
-  margin: -2px; /* !importanté */
-  border-radius: inherit; /* !importanté */
+  margin: -2px;
+  border-radius: inherit;
   background: linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
 }
 .testi-cards html {
@@ -481,14 +529,14 @@ html {
 }
 .testi-cards .avatar {
   position: absolute;
-  margin-left: -120px;
-  margin-top: -620px;
+  margin-left: -116px;
+  margin-top: -630px;
 }
 .testi-cards .name {
   width: 140px;
   position: absolute;
-  margin-top: -620px;
-  margin-left: -60px;
+  margin-top: -638px;
+  margin-left: -70px;
   font-weight: 400;
   font-size: 16px;
   line-height: 120%;
@@ -496,23 +544,26 @@ html {
 }
 .testi-cards .user-info {
   position: absolute;
-  margin-top: -600px;
-  margin-left: -60px;
-  width: 150px;
+  margin-top: -610px;
+  margin-left: -70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .testi-cards .user-info p {
+  margin-right: 5px;
   font-weight: 300;
   font-size: 15px;
   line-height: 120%;
   color: #BDBDBD;
 }
+.testi-cards .user-info img {
+  margin-right: 5px;
+}
 .testi-cards .comment {
   position: absolute;
   margin-left: -115px;
-  margin-top: -240px;
+  margin-top: -250px;
   width: 237px;
   height: 307px;
   text-overflow: clip;
@@ -739,4 +790,4 @@ footer .designed-by p {
   margin-top: -7px;
 }
 
-/*# sourceMappingURL=style.scss.map */
+/*# sourceMappingURL=style.css.map */
