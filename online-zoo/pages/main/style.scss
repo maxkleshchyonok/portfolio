@@ -10,32 +10,36 @@ header {
   background-color: $black-color;
   backdrop-filter: blur(2px);
   font-family: Roboto;
-  .logo-rectang {
-    width: 81px;
-    height: 50px;
-    margin-left: 219px;
-    margin-top: 14px;
-    color: rgba(255,255,255,1);
-    border: 1px solid #FFFFFF;
-    border-radius: 2px;
-    .logo-text{
-      box-sizing: border-box;
-      margin: 3.55px 4.75px 3.55px 4.75px;
-      width: 72.49px;
-      height: 44.91px;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 19.0145px;
-      line-height: 120%;
-      text-align: center;
-      color: #FFFFFF;
-      .bamboo{
-        position: absolute;
-        margin-left: 4.8px;
-        margin-top: 17.9px;
+  .logo-href{
+    text-decoration: none;
+    .logo-rectang {
+      width: 81px;
+      height: 50px;
+      margin-left: 219px;
+      margin-top: 14px;
+      color: rgba(255,255,255,1);
+      border: 1px solid #FFFFFF;
+      border-radius: 2px;
+      .logo-text{
+        box-sizing: border-box;
+        margin: 3.55px 4.75px 3.55px 4.75px;
+        width: 72.49px;
+        height: 44.91px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 19.0145px;
+        line-height: 120%;
+        text-align: center;
+        color: #FFFFFF;
+        .bamboo{
+          position: absolute;
+          margin-left: 4.8px;
+          margin-top: 17.9px;
+        }
       }
     }
   }
+
   .navbar{
     display: flex;
     justify-content: space-between;
@@ -739,6 +743,7 @@ footer{
           }
       }
       .submit{
+        cursor: pointer;
         margin-left: -25px;
         margin-top: -5px;
         height: 42px;
