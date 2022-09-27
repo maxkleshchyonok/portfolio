@@ -9,7 +9,10 @@ header {
   backdrop-filter: blur(2px);
   font-family: Roboto;
 }
-header .logo-rectang {
+header .logo-href {
+  text-decoration: none;
+}
+header .logo-href .logo-rectang {
   width: 81px;
   height: 50px;
   margin-left: 219px;
@@ -18,7 +21,7 @@ header .logo-rectang {
   border: 1px solid #FFFFFF;
   border-radius: 2px;
 }
-header .logo-rectang .logo-text {
+header .logo-href .logo-rectang .logo-text {
   box-sizing: border-box;
   margin: 3.55px 4.75px 3.55px 4.75px;
   width: 72.49px;
@@ -30,7 +33,7 @@ header .logo-rectang .logo-text {
   text-align: center;
   color: #FFFFFF;
 }
-header .logo-rectang .logo-text .bamboo {
+header .logo-href .logo-rectang .logo-text .bamboo {
   position: absolute;
   margin-left: 4.8px;
   margin-top: 17.9px;
@@ -720,6 +723,7 @@ footer .subscribe .form .formRectan p {
   color: #BDBDBD;
 }
 footer .subscribe .form .submit {
+  cursor: pointer;
   margin-left: -25px;
   margin-top: -5px;
   height: 42px;
