@@ -219,8 +219,8 @@ header .navbar .designed {
 }
 .pick-feed .inner-window .dollar {
   position: absolute;
-  margin-left: 400px;
-  margin-top: 400px;
+  margin-left: 240px;
+  margin-top: 682px;
 }
 .pick-feed .inner-window .radio-buttons {
   display: flex;
@@ -241,6 +241,7 @@ header .navbar .designed {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  cursor: pointer;
   border-radius: 50%;
   width: 16px;
   height: 16px;
@@ -363,16 +364,33 @@ footer .subscribe .form {
   justify-content: space-between;
   align-items: center;
 }
+footer .subscribe .form ::placeholder {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #BDBDBD;
+}
 footer .subscribe .form .formRectan {
+  padding-left: 10px;
   margin-right: 20px;
   margin-top: -4px;
   margin-left: 3px;
   height: 40px;
-  width: 227px;
+  width: 215px;
   border-radius: 2px;
   border: 0.7px solid rgb(249, 128, 75);
   display: flex;
   align-items: center;
+  background: transparent;
+  outline: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #BDBDBD;
 }
 footer .subscribe .form .formRectan p {
   margin-left: 8px;
@@ -411,6 +429,8 @@ footer .donate {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: none;
+  cursor: pointer;
 }
 footer .donate h1 {
   font-family: "Roboto";

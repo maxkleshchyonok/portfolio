@@ -724,16 +724,33 @@ footer{
       display: flex;
       justify-content: space-between;
       align-items: center;
+      ::placeholder{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        color: #BDBDBD;
+      }
       .formRectan{
+        padding-left: 10px;
         margin-right: 20px;
         margin-top: -4px;
         margin-left: 3px;
         height: 40px;
-        width: 227px;
+        width: 215px;
         border-radius: 2px;
         border: 0.7px solid rgba(249, 128, 75, 1);
         display: flex;
         align-items: center;
+        background: transparent;
+        outline: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        color: #BDBDBD;
           p{
             margin-left: 8px;
             font-weight: 400;
