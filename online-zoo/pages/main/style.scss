@@ -179,45 +179,84 @@ html{
     margin-left: 20px;
     margin-right: 40px;
 
-    div {
+    .card-container:hover{
+
+      img{
+        transform: scale(1.32);
+      }
+      .description{
+        background: rgba(0,0,0,.5);
+        position: relative;
+        z-index: 2;
+        height: 70px;
+        h1{
+          position: relative;
+          margin-left: 100px;
+          z-index: 6;
+          color: white;
+        }
+        p{
+          position: relative;
+          margin-left: 100px;
+          z-index: 6;
+          color: white;
+        }
+      }
+
+      .banana-bamboo{
+        display: none;
+      }
+      .meat-fish{
+        display: none;
+      }
+    }
+    .card-container {
       box-sizing: border-box;
+      overflow: hidden;
       width: 366px;
       height: 426px;
-      border: 1px solid transparent;
-      border-image: linear-gradient(to right, rgba(250, 111, 50, 1), rgba(254, 144, 19, 1));
-      border-image-slice: 1;
+      border: 1px solid rgba(254, 144, 19, 1);
+      //border-image: linear-gradient(to right, rgba(250, 111, 50, 1), rgba(254, 144, 19, 1));
+      //border-image-slice: 1;
       //background: linear-gradient(to right, rgba(250, 111, 50, 1), rgba(254, 144, 19, 1));
       border-radius: 5px;
       //box-shadow: inset 0px 0px 0px 100vw #fff;
       font-family: 'Roboto';
       font-style: normal;
+
       img {
         width: 364px;
         height: 366px;
+        transition: all 600ms;
+      }
+      //img:hover{
+      //  transform: scale(1.2);
+      //}
+      .description{
+        h1 {
+          width: 294px;
+          height: 22px;
+          margin-left: 16px;
+          margin-top: 4px;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 140%;
+          text-transform: uppercase;
+          color: #000000;
+        }
+
+        p {
+          width: 294px;
+          height: 18px;
+          margin-left: 15px;
+          margin-top: -13px;
+          font-weight: 300;
+          font-size: 15px;
+          line-height: 120%;
+          color: #000000;
+        }
       }
 
-      h1 {
-        width: 294px;
-        height: 22px;
-        margin-left: 16px;
-        margin-top: 4px;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 140%;
-        text-transform: uppercase;
-        color: #000000;
-      }
-
-      p {
-        width: 294px;
-        height: 18px;
-        margin-left: 15px;
-        margin-top: -13px;
-        font-weight: 300;
-        font-size: 15px;
-        line-height: 120%;
-        color: #000000;
-      }
 
       .banana-bamboo {
         position: absolute;

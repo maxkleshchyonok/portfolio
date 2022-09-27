@@ -187,22 +187,49 @@ html {
   margin-left: 20px;
   margin-right: 40px;
 }
-.slide-cards .cards div {
+.slide-cards .cards .card-container:hover img {
+  transform: scale(1.32);
+}
+.slide-cards .cards .card-container:hover .description {
+  background: rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 2;
+  height: 70px;
+}
+.slide-cards .cards .card-container:hover .description h1 {
+  position: relative;
+  margin-left: 100px;
+  z-index: 6;
+  color: white;
+}
+.slide-cards .cards .card-container:hover .description p {
+  position: relative;
+  margin-left: 100px;
+  z-index: 6;
+  color: white;
+}
+.slide-cards .cards .card-container:hover .banana-bamboo {
+  display: none;
+}
+.slide-cards .cards .card-container:hover .meat-fish {
+  display: none;
+}
+.slide-cards .cards .card-container {
   box-sizing: border-box;
+  overflow: hidden;
   width: 366px;
   height: 426px;
-  border: 1px solid transparent;
-  border-image: linear-gradient(to right, rgb(250, 111, 50), rgb(254, 144, 19));
-  border-image-slice: 1;
+  border: 1px solid rgb(254, 144, 19);
   border-radius: 5px;
   font-family: "Roboto";
   font-style: normal;
 }
-.slide-cards .cards div img {
+.slide-cards .cards .card-container img {
   width: 364px;
   height: 366px;
+  transition: all 600ms;
 }
-.slide-cards .cards div h1 {
+.slide-cards .cards .card-container .description h1 {
   width: 294px;
   height: 22px;
   margin-left: 16px;
@@ -213,7 +240,7 @@ html {
   text-transform: uppercase;
   color: #000000;
 }
-.slide-cards .cards div p {
+.slide-cards .cards .card-container .description p {
   width: 294px;
   height: 18px;
   margin-left: 15px;
@@ -223,7 +250,7 @@ html {
   line-height: 120%;
   color: #000000;
 }
-.slide-cards .cards div .banana-bamboo {
+.slide-cards .cards .card-container .banana-bamboo {
   position: absolute;
   width: 33px;
   height: 37px;
@@ -231,14 +258,14 @@ html {
   margin-top: -53px;
   border: none;
 }
-.slide-cards .cards div .banana-bamboo .bamboo-green {
+.slide-cards .cards .card-container .banana-bamboo .bamboo-green {
   position: absolute;
   height: 100%;
   width: 100%;
   border-radius: 0px;
   z-index: 1;
 }
-.slide-cards .cards div .banana-bamboo .banana {
+.slide-cards .cards .card-container .banana-bamboo .banana {
   position: relative;
   height: 100%;
   width: 100%;
@@ -247,7 +274,7 @@ html {
   border-radius: 0px;
   z-index: 5;
 }
-.slide-cards .cards div .meat-fish {
+.slide-cards .cards .card-container .meat-fish {
   position: absolute;
   width: 33px;
   height: 37px;
@@ -255,14 +282,14 @@ html {
   margin-top: -53px;
   border: none;
 }
-.slide-cards .cards div .meat-fish .meat {
+.slide-cards .cards .card-container .meat-fish .meat {
   position: absolute;
   height: 100%;
   width: 100%;
   border-radius: 0px;
   z-index: 1;
 }
-.slide-cards .cards div .meat-fish .fish {
+.slide-cards .cards .card-container .meat-fish .fish {
   position: relative;
   height: 100%;
   width: 100%;
