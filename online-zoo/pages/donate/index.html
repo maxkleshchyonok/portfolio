@@ -57,11 +57,11 @@
             <img class="dollar" src="../../assets/images/dollar.svg">
             <div class="radio-buttons">
                 <input type="radio" id="contactChoice1"
-                       name="contact" value="email">
+                       name="contact" value="monthly">
                 <label for="contactChoice1">Monthly</label>
 
                 <input type="radio" id="contactChoice2"
-                       name="contact" value="phone">
+                       name="contact" value="once" checked>
                 <label for="contactChoice2">Once</label>
             </div>
                 <button class="feed-button">Feed a friend now</button>
@@ -78,15 +78,13 @@
     <div class="subscribe">
         <h1>Subscribe to our news</h1>
         <div class="form">
-            <div class="formRectan">
-                <p>Enter your email</p>
-            </div>
+            <input class="formRectan" type="email" required placeholder="Enter your email">
             <button class="submit"><h3>Submit</h3></button>
         </div>
     </div>
-    <div class="donate">
+    <button class="donate" onclick="window.location.href = '../donate/index.html'">
         <h1>donate for volunteers</h1>
-    </div>
+    </button>
     <div class="social">
         <div class="each">
             <a href="https://www.facebook.com/">
