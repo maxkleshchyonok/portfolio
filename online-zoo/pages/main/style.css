@@ -613,11 +613,34 @@ html {
   color: #BDBDBD;
 }
 
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -220px;
+}
+.slider #fader {
+  width: 600px;
+  height: 6px;
+  -webkit-appearance: none;
+  border: 1px solid rgba(254, 189, 171, 0.74);
+  border-radius: 5px;
+  background: #F5F7F6;
+}
+.slider #fader::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 115px;
+  height: 6px;
+  background: #FE9013;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .feedback {
   border: none;
   cursor: pointer;
   margin-left: 212px;
-  margin-top: -180px;
+  margin-top: 28px;
   width: 298px;
   height: 54px;
   background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
