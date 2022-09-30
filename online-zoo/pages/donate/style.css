@@ -187,13 +187,102 @@ header .navbar .designed {
   margin-left: 30px;
   margin-top: -25px;
 }
-.pick-feed .inner-window .scroll {
+.pick-feed .inner-window .radio-amount {
   width: 976px;
   height: 27px;
   background: #404950;
   border-radius: 2px;
   margin-bottom: 40px;
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pick-feed .inner-window .radio-amount .amount-title {
+  position: absolute;
+  left: 0;
+  margin-left: 100px;
+  margin-top: -70px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+}
+.pick-feed .inner-window .radio-amount .line {
+  width: 915px;
+  height: 2px;
+  background: #72828E;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -3px;
+  margin-left: -3px;
+}
+.pick-feed .inner-window .radio-amount .line .amount-radio-buttons {
+  display: flex;
+  align-items: flex-start;
+  margin-left: -5px;
+  margin-top: -7px;
+}
+.pick-feed .inner-window .radio-amount .line .amount-radio-buttons label {
+  margin-top: 56px;
+  margin-left: -23px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 140%;
+  color: #333B41;
+}
+.pick-feed .inner-window .radio-amount .line .amount-radio-buttons label img {
+  display: none;
+  position: absolute;
+  margin-top: -45px;
+  margin-left: 11px;
+}
+.pick-feed .inner-window .radio-amount .line .amount-radio-buttons label:has(input:checked) {
+  color: #FE9013;
+}
+.pick-feed .inner-window .radio-amount .line .amount-radio-buttons label:has(input:checked) img {
+  display: block;
+}
+.pick-feed .inner-window .radio-amount .line .amount-radio-buttons input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  border: none;
+  background: #FFEE2E;
+  transition: 0.2s all linear;
+  outline: none;
+  margin-right: 117px;
+  margin-left: 26px;
+  margin-bottom: 15px;
+  position: relative;
+  top: 4px;
+}
+.pick-feed .inner-window .radio-amount .line .amount-radio-buttons button,
+.pick-feed .inner-window .radio-amount .line .amount-radio-buttons legend {
+  color: white;
+  background-color: black;
+  padding: 5px 10px;
+  border-radius: 0;
+  border: 0;
+  font-size: 14px;
+}
+.pick-feed .inner-window .radio-amount .line .amount-radio-buttons button:hover,
+.pick-feed .inner-window .radio-amount .line .amount-radio-buttons button:focus {
+  color: #999;
+}
+.pick-feed .inner-window .radio-amount .line .amount-radio-buttons button:active {
+  background-color: white;
+  color: black;
+  outline: 1px solid black;
 }
 .pick-feed .inner-window input::-webkit-outer-spin-button,
 .pick-feed .inner-window input::-webkit-inner-spin-button {

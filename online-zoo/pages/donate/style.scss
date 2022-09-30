@@ -190,14 +190,117 @@ header {
         margin-top: -25px;
       }
     }
-    .scroll{
+    .radio-amount{
       width: 976px;
       height: 27px;
       background: #404950;
       border-radius: 2px;
       margin-bottom: 40px;
       margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .amount-title{
+        position: absolute;
+        left: 0;
+        margin-left: 100px;
+        margin-top: -70px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        color: #000000;
+      }
+        .line{
+          width: 915px;
+          height: 2px;
+          background: #72828E;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: -3px;
+          margin-left: -3px;
+          .amount-radio-buttons{
+            display: flex;
+            align-items: flex-start;
+            margin-left: -5px;
+            margin-top: -7px;
+
+            label{
+              margin-top: 56px;
+              margin-left: -23px;
+              font-family: Roboto;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 26px;
+              line-height: 140%;
+              color: #333B41;
+              img{
+                display: none;
+                position: absolute;
+                margin-top: -45px;
+                margin-left: 11px;
+              }
+            }
+
+                label:has(input:checked){
+                  color: #FE9013;
+                  img{
+                    display: block;
+                  }
+                }
+
+                input {
+                  -webkit-appearance: none;
+                  -moz-appearance: none;
+                  appearance: none;
+                  cursor: pointer;
+                  border-radius: 50%;
+                  width: 10px;
+                  height: 10px;
+
+                  //border: 1px solid #FE9013;
+                  border: none;
+                  background: #FFEE2E;
+                  transition: 0.2s all linear;
+                  outline: none;
+                  margin-right: 117px;
+                  margin-left: 26px;
+                  margin-bottom: 15px;
+                  position: relative;
+                  top: 4px;
+                }
+
+                input:checked{
+                  //outline: 3px solid #FE9013;
+                }
+
+                button,
+                legend {
+                  color: white;
+                  background-color: black;
+                  padding: 5px 10px;
+                  border-radius: 0;
+                  border: 0;
+                  font-size: 14px;
+                }
+
+                button:hover,
+                button:focus {
+                  color: #999;
+                }
+
+                button:active {
+                  background-color: white;
+                  color: black;
+                  outline: 1px solid black;
+                }
+              }
+            }
     }
+
+
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
       -webkit-appearance: none;
