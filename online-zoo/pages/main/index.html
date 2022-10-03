@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online-zoo</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
@@ -17,13 +18,16 @@
             <h1 class="logo-text"><img class="bamboo" src="../../assets/images/bamboo.svg">PetStory online</h1>
         </div>
         </a>
-        <div class="navbar">
+        <div id="navbar" class="navbar">
             <a class="active">About</a>
             <a>Map</a>
             <a>Zoos</a>
             <a href="../donate/index.html">Donate</a>
             <a>Contact us</a>
             <a href="https://www.figma.com/file/jfEFwkXVj1WRq7sUHDr8os/PetStory-online?node-id=0%3A1" class="designed">Designed by &#169;</a>
+        </div>
+        <div class="menu__icon">
+            <span></span>
         </div>
     </div>
 </header>
@@ -96,7 +100,7 @@
                     <img class="banana" src="../../assets/images/banana.svg">
                 </div>
             </div>
-            <div class="card-container">
+            <div class="card-container hidden">
                 <img src="../../assets/images/cheetahs.jpg">
                 <div class="description">
                 <h1>Cheetahs</h1>
@@ -107,7 +111,7 @@
                     <img class="fish" src="../../assets/images/fish_icon.svg">
                 </div>
             </div>
-            <div class="card-container">
+            <div class="card-container hidden">
                 <img src="../../assets/images/penguin.jpg">
                 <div class="description">
                 <h1>Penguins</h1>
@@ -120,6 +124,14 @@
             </div>
         </div>
         <button class="arrow-buttons">
+            <img src="../../assets/images/rightArrow.svg">
+        </button>
+    </div>
+    <div class="arrow-buttons-for-small">
+        <button class="arrow-buttons-closely">
+            <img src="../../assets/images/leftArrow.svg">
+        </button>
+        <button class="arrow-buttons-closely">
             <img src="../../assets/images/rightArrow.svg">
         </button>
     </div>
@@ -137,15 +149,21 @@
             <p class="second-para">Even though the zoo has reopened, we need you now more than ever to help us deal with
                 these problems. Please consider a gift to our <a href="../donate/index.html">Emergency Support Fund</a> . </p>
             <h1 class="how-title">How it works</h1>
+            <div class="green-arrows">
+                <img class="green-arrow" src="../../assets/images/green-arrow.svg">
+                <img class="green-arrow" src="../../assets/images/green-arrow.svg">
+            </div>
             <div class="schema">
                 <div>
                     <img src="../../assets/images/pay.svg">
                 </div>
-                <img src="../../assets/images/schemaArrow.svg">
+                <img class="hide" src="../../assets/images/schemaArrow.svg">
+                <img class="mobile-arrow" src="../../assets/images/mobile-arrow.svg">
                 <div>
                     <img src="../../assets/images/handTree.svg">
                 </div>
-                <img src="../../assets/images/schemaArrow.svg">
+                <img class="hide" src="../../assets/images/schemaArrow.svg">
+                <img class="mobile-arrow" src="../../assets/images/mobile-arrow.svg">
                 <div>
                     <img src="../../assets/images/monkey2.svg">
                 </div>
@@ -209,7 +227,7 @@
 
             </p>
         </div>
-        <div class="gradient-box">
+        <div class="gradient-box small-desktop-hide">
             <img class="avatar" src="../../assets/images/mila.svg">
             <h2 class="name">Mila Riksha</h2>
             <div class="user-info">
