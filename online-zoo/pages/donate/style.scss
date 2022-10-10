@@ -161,6 +161,17 @@ header {
       top: 50%;
       transform: scale(1) translate(0px, -50%);
     }
+    .menu__icon.active span{
+      transform: scale(0) translate(0px, -50%);
+    }
+    .menu__icon.active::before{
+      top: 50%;
+      transform: rotate(-45deg) translate(0px,-50%);
+    }
+    .menu__icon.active::after{
+      bottom: 50%;
+      transform: rotate(45deg) translate(0px, 50%);
+    }
   }
 }
 
@@ -413,8 +424,8 @@ header {
                   appearance: none;
                   cursor: pointer;
                   border-radius: 50%;
-                  width: 5px;
-                  height: 5px;
+                  width: 10px;
+                  height: 10px;
 
                   //border: 1px solid #FE9013;
                   border: none;
