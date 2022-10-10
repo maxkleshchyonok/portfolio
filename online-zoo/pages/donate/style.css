@@ -151,6 +151,17 @@ header .menu__icon::after {
     top: 50%;
     transform: scale(1) translate(0px, -50%);
   }
+  header .menu__icon.active span {
+    transform: scale(0) translate(0px, -50%);
+  }
+  header .menu__icon.active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0px, -50%);
+  }
+  header .menu__icon.active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0px, 50%);
+  }
 }
 @media (max-width: 639px) {
   header {
@@ -391,8 +402,8 @@ header .menu__icon::after {
   appearance: none;
   cursor: pointer;
   border-radius: 50%;
-  width: 5px;
-  height: 5px;
+  width: 10px;
+  height: 10px;
   border: none;
   background: #FFEE2E;
   transition: 0.2s all linear;

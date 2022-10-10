@@ -55,7 +55,7 @@ header {
     .designed{
         margin-left: auto;
     }
-    .active{
+    .active-link{
       color: rgba(249, 128, 75, 1);
     }
   }
@@ -161,6 +161,17 @@ header {
     .menu__icon span{
       top: 50%;
       transform: scale(1) translate(0px, -50%);
+    }
+    .menu__icon.active span{
+      transform: scale(0) translate(0px, -50%);
+    }
+    .menu__icon.active::before{
+      top: 50%;
+      transform: rotate(-45deg) translate(0px,-50%);
+    }
+    .menu__icon.active::after{
+      bottom: 50%;
+      transform: rotate(45deg) translate(0px, 50%);
     }
   }
 }
@@ -508,6 +519,42 @@ html{
   }
 }
 
+.to-left{
+  animation-name: left;
+}
+
+.to-right{
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left{
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+.from-right{
+  animation-name: right;
+}
+
+@keyframes left {
+  from{
+    left: 0;
+  }
+  to{
+    left: -100%;
+  }
+}
+
+@keyframes right {
+  from{
+    left: 100%;
+  }
+  to{
+    left: 0;
+  }
+}
+
 .slide-cards {
   display: flex;
   align-items: center;
@@ -552,6 +599,17 @@ html{
         display: none;
       }
     }
+    .active,
+    .next{
+      display: block;
+    }
+
+    .next{
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
     .card-container {
       box-sizing: border-box;
       overflow: hidden;
@@ -565,7 +623,7 @@ html{
       //box-shadow: inset 0px 0px 0px 100vw #fff;
       font-family: 'Roboto';
       font-style: normal;
-
+      animation: 0.3s ease-in-out;
       img {
         width: 364px;
         height: 366px;

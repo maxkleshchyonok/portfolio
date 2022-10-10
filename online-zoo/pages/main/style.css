@@ -54,7 +54,7 @@ header .navbar a {
 header .navbar .designed {
   margin-left: auto;
 }
-header .navbar .active {
+header .navbar .active-link {
   color: rgb(249, 128, 75);
 }
 
@@ -150,6 +150,17 @@ header .menu__icon::after {
   header .menu__icon span {
     top: 50%;
     transform: scale(1) translate(0px, -50%);
+  }
+  header .menu__icon.active span {
+    transform: scale(0) translate(0px, -50%);
+  }
+  header .menu__icon.active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0px, -50%);
+  }
+  header .menu__icon.active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0px, 50%);
   }
 }
 @media (max-width: 639px) {
@@ -470,6 +481,40 @@ html {
     margin-top: -125%;
   }
 }
+.to-left {
+  animation-name: left;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
 .slide-cards {
   display: flex;
   align-items: center;
@@ -511,6 +556,15 @@ html {
 .slide-cards .cards .card-container:hover .meat-fish {
   display: none;
 }
+.slide-cards .cards .active,
+.slide-cards .cards .next {
+  display: block;
+}
+.slide-cards .cards .next {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
 .slide-cards .cards .card-container {
   box-sizing: border-box;
   overflow: hidden;
@@ -520,6 +574,7 @@ html {
   border-radius: 5px;
   font-family: "Roboto";
   font-style: normal;
+  animation: 0.3s ease-in-out;
 }
 .slide-cards .cards .card-container img {
   width: 364px;
