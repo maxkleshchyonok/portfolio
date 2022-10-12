@@ -89,7 +89,7 @@
                             $250</label>
 
                         <label for="amountChoice5">
-                            <input type="radio" id="amountChoice5"
+                            <input type="radio" id="amountChoice5" checked
                                    name="amount" value="100">
                             <img src="../../assets/images/roller_icon.svg">
                             $100</label>
@@ -108,7 +108,7 @@
                     </div>
                 </div>
             </div>
-            <input class="amount" type="number" placeholder="Another amount">
+            <input  id="amount-field" class="amount" type="number" placeholder="Another amount" value="100" onkeypress="this.value=this.value.substring(0,3)">
             <img class="dollar" src="../../assets/images/dollar.svg">
             <div class="radio-buttons">
                 <input type="radio" id="contactChoice1"

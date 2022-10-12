@@ -51,11 +51,13 @@
             reptiles.</p>
     </div>
     <img class="up-left-flower" src="../../assets/images/flower_foto1.jpg">
-    <div class="slide-cards">
-        <button class="arrow-buttons left">
+    <div class="slide-cards" id="slide-cards">
+        <button class="arrow-buttons left" onclick="changeCards()">
             <img src="../../assets/images/leftArrow.svg">
         </button>
-        <div class="cards">
+
+
+        <div class="cards active">
             <div class="card-container">
                 <img src="../../assets/images/2pandas.jpg">
                 <div class="description">
@@ -123,15 +125,156 @@
                 </div>
             </div>
         </div>
-        <button class="arrow-buttons right">
+
+        <div class="cards">
+            <div class="card-container">
+                <img src="../../assets/images/zebra.jpg">
+                <div class="description">
+                    <h1>Giant pandas</h1>
+                    <p>Native to Southwest China</p>
+                </div>
+                <div class="banana-bamboo">
+                    <img class="bamboo-green" src="../../assets/images/bambooGreen.svg">
+                    <img class="banana" src="../../assets/images/banana.svg">
+                </div>
+            </div>
+            <div class="card-container">
+                <img src="../../assets/images/tiger.jpg">
+                <div class="description">
+                    <h1>Eagles</h1>
+                    <p>Native to South America</p>
+                </div>
+                <div class="meat-fish">
+                    <img class="meat" src="../../assets/images/steak_icon.svg">
+                    <img class="fish" src="../../assets/images/fish_icon.svg">
+                </div>
+            </div>
+            <div class="card-container">
+                <img src="../../assets/images/lemury.jpg">
+                <div class="description">
+                    <h1>Gorillas</h1>
+                    <p>Native to Congo</p>
+                </div>
+                <div class="banana-bamboo">
+                    <img class="bamboo-green" src="../../assets/images/bambooGreen.svg">
+                    <img class="banana" src="../../assets/images/banana.svg">
+                </div>
+            </div>
+            <div class="card-container">
+                <img src="../../assets/images/red-panda.jpg">
+                <div class="description">
+                    <h1>Two-toed Sloth</h1>
+                    <p>Mesoamerica, South America</p>
+                </div>
+                <div class="banana-bamboo">
+                    <img class="bamboo-green" src="../../assets/images/bambooGreen.svg">
+                    <img class="banana" src="../../assets/images/banana.svg">
+                </div>
+            </div>
+            <div class="card-container hidden">
+                <img src="../../assets/images/lev.jpg">
+                <div class="description">
+                    <h1>Cheetahs</h1>
+                    <p>Native to Africa</p>
+                </div>
+                <div class="meat-fish">
+                    <img class="meat" src="../../assets/images/steak_icon.svg">
+                    <img class="fish" src="../../assets/images/fish_icon.svg">
+                </div>
+            </div>
+            <div class="card-container hidden">
+                <img src="../../assets/images/medved.jpg">
+                <div class="description">
+                    <h1>Penguins</h1>
+                    <p>Native to Antarctica</p>
+                </div>
+                <div class="meat-fish">
+                    <img class="meat" src="../../assets/images/steak_icon.svg">
+                    <img class="fish" src="../../assets/images/fish_icon.svg">
+                </div>
+            </div>
+        </div>
+
+<!--        <div class="cards">-->
+<!--            <div class="card-container">-->
+<!--                <img src="../../assets/images/enot.jpg">-->
+<!--                <div class="description">-->
+<!--                    <h1>Giant pandas</h1>-->
+<!--                    <p>Native to Southwest China</p>-->
+<!--                </div>-->
+<!--                <div class="banana-bamboo">-->
+<!--                    <img class="bamboo-green" src="../../assets/images/bambooGreen.svg">-->
+<!--                    <img class="banana" src="../../assets/images/banana.svg">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="card-container">-->
+<!--                <img src="../../assets/images/sand-kot.jpg">-->
+<!--                <div class="description">-->
+<!--                    <h1>Eagles</h1>-->
+<!--                    <p>Native to South America</p>-->
+<!--                </div>-->
+<!--                <div class="meat-fish">-->
+<!--                    <img class="meat" src="../../assets/images/steak_icon.svg">-->
+<!--                    <img class="fish" src="../../assets/images/fish_icon.svg">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="card-container">-->
+<!--                <img src="../../assets/images/belka.jpg">-->
+<!--                <div class="description">-->
+<!--                    <h1>Gorillas</h1>-->
+<!--                    <p>Native to Congo</p>-->
+<!--                </div>-->
+<!--                <div class="banana-bamboo">-->
+<!--                    <img class="bamboo-green" src="../../assets/images/bambooGreen.svg">-->
+<!--                    <img class="banana" src="../../assets/images/banana.svg">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="card-container">-->
+<!--                <img src="../../assets/images/popugai.jpg">-->
+<!--                <div class="description">-->
+<!--                    <h1>Two-toed Sloth</h1>-->
+<!--                    <p>Mesoamerica, South America</p>-->
+<!--                </div>-->
+<!--                <div class="banana-bamboo">-->
+<!--                    <img class="bamboo-green" src="../../assets/images/bambooGreen.svg">-->
+<!--                    <img class="banana" src="../../assets/images/banana.svg">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="card-container hidden">-->
+<!--                <img src="../../assets/images/hameleon.jpg">-->
+<!--                <div class="description">-->
+<!--                    <h1>Cheetahs</h1>-->
+<!--                    <p>Native to Africa</p>-->
+<!--                </div>-->
+<!--                <div class="meat-fish">-->
+<!--                    <img class="meat" src="../../assets/images/steak_icon.svg">-->
+<!--                    <img class="fish" src="../../assets/images/fish_icon.svg">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="card-container hidden">-->
+<!--                <img src="../../assets/images/giraf.jpg">-->
+<!--                <div class="description">-->
+<!--                    <h1>Penguins</h1>-->
+<!--                    <p>Native to Antarctica</p>-->
+<!--                </div>-->
+<!--                <div class="meat-fish">-->
+<!--                    <img class="meat" src="../../assets/images/steak_icon.svg">-->
+<!--                    <img class="fish" src="../../assets/images/fish_icon.svg">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+
+        <button id="button-right" class="arrow-buttons right" onclick="changeCards()">
             <img src="../../assets/images/rightArrow.svg">
         </button>
     </div>
     <div class="arrow-buttons-for-small">
-        <button class="arrow-buttons-closely">
+        <button class="arrow-buttons-closely" onclick="changeCards()">
             <img src="../../assets/images/leftArrow.svg">
         </button>
-        <button class="arrow-buttons-closely">
+        <button class="arrow-buttons-closely" onclick="changeCards()">
             <img src="../../assets/images/rightArrow.svg">
         </button>
     </div>

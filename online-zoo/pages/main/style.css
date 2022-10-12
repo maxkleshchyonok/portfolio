@@ -115,6 +115,7 @@ header .navbar .active-link {
     margin-left: 4%;
   }
   header .active {
+    box-shadow: 0px 450px 10px rgba(0, 0, 0, 0.5);
     transform: translate(0px, 0px);
   }
   header .menu__icon {
@@ -481,24 +482,37 @@ html {
     margin-top: -125%;
   }
 }
-.to-left {
+.slide-cards {
+  display: flex;
+  align-items: center;
+  margin-left: 150px;
+  margin-top: 97px;
+}
+.slide-cards .cards.active {
+  display: grid;
+}
+.slide-cards .cards.next {
+  display: grid;
+}
+.slide-cards .cards.next {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.slide-cards .cards.to-left {
   animation-name: left;
 }
-
-.to-right {
+.slide-cards .cards.to-right {
   animation-name: right;
   animation-direction: reverse;
 }
-
-.from-left {
+.slide-cards .cards.from-left {
   animation-name: left;
   animation-direction: reverse;
 }
-
-.from-right {
+.slide-cards .cards.from-right {
   animation-name: right;
 }
-
 @keyframes left {
   from {
     left: 0;
@@ -515,19 +529,14 @@ html {
     left: 0;
   }
 }
-.slide-cards {
-  display: flex;
-  align-items: center;
-  margin-left: 150px;
-  margin-top: 97px;
-}
 .slide-cards .cards {
-  display: grid;
+  display: none;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 30px;
   grid-row-gap: 20px;
   margin-left: 20px;
   margin-right: 40px;
+  animation: 1s linear 1s alternate slidein;
 }
 .slide-cards .cards .card-container:hover img {
   transform: scale(1.32);
@@ -560,10 +569,41 @@ html {
 .slide-cards .cards .next {
   display: block;
 }
-.slide-cards .cards .next {
-  position: absolute;
-  top: 0;
-  width: 100%;
+.slide-cards .cards .card-container.active {
+  display: block;
+}
+.slide-cards .cards .card-container.next {
+  display: block;
+}
+.slide-cards .cards .to-left {
+  animation-name: left;
+}
+.slide-cards .cards .to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+.slide-cards .cards .from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+.slide-cards .cards .from-right {
+  animation-name: right;
+}
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
 }
 .slide-cards .cards .card-container {
   box-sizing: border-box;
@@ -574,7 +614,7 @@ html {
   border-radius: 5px;
   font-family: "Roboto";
   font-style: normal;
-  animation: 0.3s ease-in-out;
+  animation: 0.5s ease-in-out;
 }
 .slide-cards .cards .card-container img {
   width: 364px;
@@ -709,6 +749,9 @@ html {
   .slide-cards {
     margin-top: 16%;
     margin-left: 0;
+  }
+  .slide-cards .cards.active {
+    display: grid;
   }
   .slide-cards .cards {
     grid-row-gap: 13%;
