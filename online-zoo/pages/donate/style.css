@@ -115,6 +115,7 @@ header .navbar .designed {
     margin-left: 4%;
   }
   header .active {
+    box-shadow: 0px 450px 10px rgba(0, 0, 0, 0.5);
     transform: translate(0px, 0px);
   }
   header .menu__icon {
