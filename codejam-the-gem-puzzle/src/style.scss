@@ -25,6 +25,7 @@ body {
       min-width: 300px;
       min-height: 300px;
       height: 500px;
+      //background-color: white;
       background-color: rgba(175, 175, 175, 0.77);
       .puzzle-block{
         position: absolute;
@@ -44,6 +45,14 @@ body {
       .puzzle-block:hover{
         font-size: 35px;
         background-color: rgb(245, 245, 245);
+      }
+    }
+    .win{
+      .puzzle-block{
+        background-color: rgba(126, 236, 136, 0.99);
+      }
+      .puzzle-block:hover{
+        background-color: rgba(126, 236, 136, 0.99);
       }
     }
     .play-button{
@@ -89,6 +98,10 @@ body {
         .puzzle-block{
           width: 75px;
           height: 75px;
+          font-size: 40px;
+        }
+        .puzzle-block:hover{
+          font-size: 45px;
         }
       }
     }

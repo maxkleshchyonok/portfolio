@@ -49,6 +49,12 @@ body .container .puzzle .puzzle-block:hover {
   font-size: 35px;
   background-color: rgb(245, 245, 245);
 }
+body .container .win .puzzle-block {
+  background-color: rgba(126, 236, 136, 0.99);
+}
+body .container .win .puzzle-block:hover {
+  background-color: rgba(126, 236, 136, 0.99);
+}
 body .container .play-button {
   margin-top: 3%;
   width: 70px;
@@ -84,6 +90,10 @@ body .container .play-button:hover {
   body .container .puzzle .puzzle-block {
     width: 75px;
     height: 75px;
+    font-size: 40px;
+  }
+  body .container .puzzle .puzzle-block:hover {
+    font-size: 45px;
   }
 }
 
