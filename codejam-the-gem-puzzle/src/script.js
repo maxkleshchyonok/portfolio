@@ -2,19 +2,79 @@ const containerNode = document.getElementById('puzzle');
 const itemNodes = Array.from(containerNode.querySelectorAll('.puzzle-block'));
 const countItems = 16;
 
+
+let active = false;
+
+function startTimer() {
+    if (active) {
+        let timer = document.getElementById('timer-numbers').innerHTML;
+        let arr = timer.split(':')
+        let minutes = arr[0];
+        let seconds = arr[1];
+        let hundredths = arr[2];
+        if (hundredths == 99) {
+            if (seconds == 59) {
+                minutes++;
+                seconds = 0;
+                if (minutes < 10) minutes = "0" + minutes;
+            } else {
+                seconds++;
+            }
+            if (seconds < 10) seconds = "0" + seconds;
+            hundredths = 0;
+        } else {
+            hundredths++;
+            if(hundredths < 10) hundredths = "0" + hundredths
+        }
+        document.getElementById('timer-numbers').innerHTML = minutes + ":" + seconds + ":" + hundredths;
+        setTimeout(startTimer, 10);
+    }
+}
+
+function changeState() {
+    if(active == false){
+        active = true;
+        startTimer();
+        console.log('timer has been started')
+    } else{
+        active = false;
+    }
+}
+
+
+let moves = 0;
+function countMoves() {
+    if(active){
+        moves++;
+        document.getElementById('moves-number').innerHTML = '' + moves;
+    }
+}
+
+
+
+
 let timer;
+const shuffledClassName = 'blocked';
 document.getElementById('play').addEventListener('click', () => {
+    if(active){
+        changeState();
+    }
+    document.getElementById('timer-numbers').innerHTML = '00:00:00';
+    document.getElementById('moves-number').innerHTML = "0";
     // randomSwap(matrix);
     // setPositionItems(matrix);
     let shuffleCount = 0;
     clearInterval(timer);
+    containerNode.classList.add(shuffledClassName);
     if(shuffleCount === 0){
         timer = setInterval(()=>{
             randomSwap(matrix);
             setPositionItems(matrix);
             shuffleCount += 1;
             if(shuffleCount >= 100){
+                containerNode.classList.remove(shuffledClassName);
                 clearInterval(timer);
+                changeState();
             }
         }, 50);
     }
@@ -86,6 +146,7 @@ containerNode.addEventListener('click', (event) => {
     if(isValid){
         swap(blankCoords, buttonCoords, matrix);
         setPositionItems(matrix);
+        countMoves()
     }
 
 
@@ -153,6 +214,7 @@ function isWin(matrix) {
             return false;
         }
     }
+    active = false;
     return true;
 }
 

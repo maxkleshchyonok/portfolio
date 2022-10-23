@@ -20,9 +20,34 @@ body .container {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: antiquewhite;
+  background-color: rgba(241, 241, 241, 0.83);
 }
-body .container .puzzle {
+body .container .mobile-title {
+  display: none;
+}
+body .container .game-info {
+  width: 500px;
+  font-size: 20px;
+  margin-bottom: 2%;
+  margin-left: 4%;
+}
+body .container .game-info .moves {
+  margin-left: 50%;
+}
+body .container .main {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .container .main h2 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 50px;
+}
+body .container .main .blocked {
+  pointer-events: none;
+}
+body .container .main .puzzle {
   position: relative;
   width: 500px;
   min-width: 300px;
@@ -30,7 +55,7 @@ body .container .puzzle {
   height: 500px;
   background-color: rgba(175, 175, 175, 0.77);
 }
-body .container .puzzle .puzzle-block {
+body .container .main .puzzle .puzzle-block {
   position: absolute;
   width: 125px;
   height: 125px;
@@ -45,17 +70,18 @@ body .container .puzzle .puzzle-block {
   user-select: none;
   transition: transform 0.5s;
 }
-body .container .puzzle .puzzle-block:hover {
+body .container .main .puzzle .puzzle-block:hover {
   font-size: 35px;
   background-color: rgb(245, 245, 245);
 }
-body .container .win .puzzle-block {
+body .container .main .win .puzzle-block {
   background-color: rgba(126, 236, 136, 0.99);
 }
-body .container .win .puzzle-block:hover {
+body .container .main .win .puzzle-block:hover {
   background-color: rgba(126, 236, 136, 0.99);
 }
 body .container .play-button {
+  margin-left: 3%;
   margin-top: 3%;
   width: 70px;
   height: 70px;
@@ -73,26 +99,71 @@ body .container .play-button:hover {
 }
 
 @media (max-width: 1280px) {
-  body .container .puzzle {
+  body .container .mobile-title {
+    display: block;
+    font-family: "Press Start 2P", cursive;
+    font-size: 45px;
+    text-align: center;
+    margin-bottom: 10%;
+  }
+  body .container .game-info {
+    width: 400px;
+    font-size: 20px;
+    margin-bottom: 2%;
+    margin-left: 1%;
+  }
+  body .container .game-info .moves {
+    margin-left: 40%;
+  }
+  body .container .main {
+    justify-content: center;
+  }
+  body .container .main h2 {
+    display: none;
+  }
+  body .container .main .puzzle {
     width: 400px;
     height: 400px;
   }
-  body .container .puzzle .puzzle-block {
+  body .container .main .puzzle .puzzle-block {
     width: 100px;
     height: 100px;
   }
+  body .container .play-button {
+    margin-left: 0;
+  }
 }
 @media (max-width: 768px) {
-  body .container .puzzle {
+  body .container .mobile-title {
+    margin-bottom: 15%;
+    margin-top: -5%;
+  }
+  body .container .game-info {
+    width: 300px;
+    font-size: 20px;
+    margin-bottom: 5%;
+    margin-left: 3%;
+  }
+  body .container .game-info .moves {
+    margin-left: 20%;
+  }
+  body .container .main {
+    justify-content: center;
+  }
+  body .container .main h2 {
+    display: none;
+  }
+  body .container .main .puzzle {
+    margin-bottom: 5%;
     width: 300px;
     height: 300px;
   }
-  body .container .puzzle .puzzle-block {
+  body .container .main .puzzle .puzzle-block {
     width: 75px;
     height: 75px;
     font-size: 40px;
   }
-  body .container .puzzle .puzzle-block:hover {
+  body .container .main .puzzle .puzzle-block:hover {
     font-size: 45px;
   }
 }
