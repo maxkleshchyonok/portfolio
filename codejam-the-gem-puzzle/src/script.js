@@ -1,6 +1,6 @@
-const containerNode = document.getElementById('puzzle');
-const itemNodes = Array.from(containerNode.querySelectorAll('.puzzle-block'));
-const countItems = 16;
+const puzzle = document.getElementById('puzzle');
+const puzzleBlocks = Array.from(puzzle.querySelectorAll('.puzzle-block'));
+const countItems8 = 16;
 
 
 let active = false;
@@ -65,14 +65,14 @@ document.getElementById('play').addEventListener('click', () => {
     // setPositionItems(matrix);
     let shuffleCount = 0;
     clearInterval(timer);
-    containerNode.classList.add(shuffledClassName);
+    puzzle.classList.add(shuffledClassName);
     if(shuffleCount === 0){
         timer = setInterval(()=>{
             randomSwap(matrix);
             setPositionItems(matrix);
             shuffleCount += 1;
             if(shuffleCount >= 100){
-                containerNode.classList.remove(shuffledClassName);
+                puzzle.classList.remove(shuffledClassName);
                 clearInterval(timer);
                 changeState();
             }
@@ -83,7 +83,7 @@ document.getElementById('play').addEventListener('click', () => {
 
 
 let matrix = getMatrix(
-    itemNodes.map((item) => Number(item.dataset.matrixId))
+    puzzleBlocks.map((item) => Number(item.dataset.matrixId))
 );
 setPositionItems(matrix)
 
@@ -102,13 +102,13 @@ function getMatrix(arr) {
     return matrix
 }
 
-itemNodes[countItems - 1].style.display = 'none';
+puzzleBlocks[countItems8 - 1].style.display = 'none';
 
 function setPositionItems(matrix) {
     for(let y=0; y<matrix.length; y++){
         for (let x=0; x<matrix[y].length; x++){
             const value = matrix[y][x];
-            const node = itemNodes[value - 1];
+            const node = puzzleBlocks[value - 1];
             setNodeStyles(node, x, y)
         }
     }
@@ -134,7 +134,7 @@ function shuffleArray(arr) {
 
 const blankNumber = 16;
 
-containerNode.addEventListener('click', (event) => {
+puzzle.addEventListener('click', (event) => {
     const buttonNode = event.target.closest('button')
     if(!buttonNode){
         return;
@@ -222,9 +222,22 @@ const winClass = 'win'
 
 function addWinClass() {
     setTimeout(() => {
-        containerNode.classList.add(winClass)
+        puzzle.classList.add(winClass)
     },200);
     setTimeout(() => {
-        containerNode.classList.remove(winClass)
+        puzzle.classList.remove(winClass)
     },2000);
 }
+
+const openPopUp = document.getElementById('open-pop-up');
+const closePopUp = document.getElementById('pop-up-close');
+const popUp = document.getElementById('pop-up');
+
+openPopUp.addEventListener('click', function (e) {
+    e.preventDefault();
+    popUp.classList.add('active');
+})
+
+closePopUp.addEventListener('click', () => {
+    popUp.classList.remove('active');
+})

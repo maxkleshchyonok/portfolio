@@ -87,24 +87,89 @@ body {
       }
     }
 
-      .play-button {
-        margin-left: 3%;
-        margin-top: 3%;
-        width: 70px;
-        height: 70px;
-        border: 1px solid rgba(175, 175, 175, 0.77);
-        border-radius: 50%;
-        background-color: rgba(126, 236, 136, 0.77);
-        text-align: center;
-        cursor: pointer;
-        font-size: 20px;
-        color: rgba(107, 107, 107, 0.87);
+      .game-buttons {
+        margin-left: 4%;
+        margin-top: 2%;
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        .play-button {
+          //margin-left: 3%;
+          //margin-top: 3%;
+          width: 70px;
+          height: 70px;
+          border: 1px solid rgba(175, 175, 175, 0.77);
+          border-radius: 50%;
+          background-color: rgba(126, 236, 136, 0.77);
+          text-align: center;
+          cursor: pointer;
+          font-size: 20px;
+          color: rgba(107, 107, 107, 0.87);
+        }
+
+        .play-button:hover {
+          font-size: 25px;
+          background-color: rgba(126, 236, 136, 0.99);
+        }
+
+        .button {
+          width: 100px;
+          height: 65px;
+          border-radius: 10px;
+          background-color: #ffc400;
+          border: 1px solid rgba(175, 175, 175, 0.77);
+
+          a {
+            font-size: 20px;
+            text-decoration: none;
+            color: rgba(107, 107, 107, 0.87);
+          }
+        }
+        .button:hover{
+          a{
+            font-size: 25px;
+          }
+        }
       }
 
-      .play-button:hover {
-        font-size: 25px;
-        background-color: rgba(126, 236, 136, 0.99);
+    .pop-up{
+      transform: translateY(50%) scale(0);
+      transition: 0.4s ease-in-out;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      left: 0;
+      top: 0;
+      background-color: transparent;
+      z-index: 2;
+      .pop-up-container{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        .pop-up-body{
+          margin: auto;
+          width: 500px;
+          background-color: white;
+          border-radius: 10px;
+          text-align: center;
+          padding: 100px 15px 110px 15px;
+          position: relative;
+          .pop-up-close{
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 21px;
+            cursor: pointer;
+          }
+        }
       }
+    }
+    .active{
+      transform: translateY(0%) scale(100%);
+      background-color: rgba(0,0,0, .8);
+    }
     }
 }
 
@@ -186,6 +251,22 @@ body {
             font-size: 45px;
           }
         }
+      }
+      .game-buttons{
+        width: 230px;
+        margin-left: 2%;
+      }
+      .pop-up{
+        transform: translateY(31%) translateX(19%) scale(0);
+        .pop-up-container{
+          .pop-up-body{
+            width: 250px;
+            height: 400px;
+          }
+        }
+      }
+      .active{
+        transform: translateY(0%) translateX(0%) scale(100%);
       }
     }
   }
