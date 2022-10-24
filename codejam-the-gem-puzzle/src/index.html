@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>gem-puzzle</title>
+<!--    <link rel="preconnect" href="https://fonts.googleapis.com">-->
+<!--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container" id="game">
+        <h1 class="mobile-title">Sliding Puzzle</h1>
+        <div class="game-info" id="timer">
+            <span>TIME:</span> <span id="timer-numbers">00:00:00</span>
+            <span class="moves">MOVES:</span><span id="moves-number">0</span>
+        </div>
+        <div class="main">
+            <h2>Sliding</h2>
+            <div class="puzzle" id="puzzle">
+                <button class="puzzle-block" data-matrix-id="1">1</button>
+                <button class="puzzle-block" data-matrix-id="2">2</button>
+                <button class="puzzle-block" data-matrix-id="3">3</button>
+                <button class="puzzle-block" data-matrix-id="4">4</button>
+                <button class="puzzle-block" data-matrix-id="5">5</button>
+                <button class="puzzle-block" data-matrix-id="6">6</button>
+                <button class="puzzle-block" data-matrix-id="7">7</button>
+                <button class="puzzle-block" data-matrix-id="8">8</button>
+                <button class="puzzle-block" data-matrix-id="9">9</button>
+                <button class="puzzle-block" data-matrix-id="10">10</button>
+                <button class="puzzle-block" data-matrix-id="11">11</button>
+                <button class="puzzle-block" data-matrix-id="12">12</button>
+                <button class="puzzle-block" data-matrix-id="13">13</button>
+                <button class="puzzle-block" data-matrix-id="14">14</button>
+                <button class="puzzle-block" data-matrix-id="15">15</button>
+                <button class="puzzle-block" data-matrix-id="16">16</button>
+            </div>
+            <h2>Puzzle</h2>
+        </div>
+        <div class="game-buttons">
+            <button class="play-button" id="play">Play</button>
+            <button class="button">
+                <a href="#" id="open-pop-up">Results</a>
+            </button>
+        </div>
+        <div class="pop-up" id="pop-up">
+            <div class="pop-up-container">
+                <div class="pop-up-body" id="pop-up-body">
+                    <p>Your best results</p>
+                    <div class="results-list" id="results-list"></div>
+                    <div class="pop-up-close" id="pop-up-close">&#10006</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
