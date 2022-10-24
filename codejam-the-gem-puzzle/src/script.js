@@ -4,6 +4,8 @@ const countItems8 = 16;
 
 
 let active = false;
+let gameTimeNumbers = '';
+
 
 function startTimer() {
     if (active) {
@@ -27,6 +29,7 @@ function startTimer() {
             if(hundredths < 10) hundredths = "0" + hundredths
         }
         document.getElementById('timer-numbers').innerHTML = minutes + ":" + seconds + ":" + hundredths;
+        gameTimeNumbers = minutes + ":" + seconds + ":" + hundredths;
         setTimeout(startTimer, 10);
     }
 }
@@ -76,7 +79,7 @@ document.getElementById('play').addEventListener('click', () => {
                 clearInterval(timer);
                 changeState();
             }
-        }, 50);
+        }, 0);
     }
 })
 
@@ -207,6 +210,8 @@ let blockedCoords = null;
 
 const winFlatArr = new Array(16).fill(0).map((item, i) => i + 1);
 
+console.log(gameTimeNumbers)
+
 function isWin(matrix) {
     const flatMatrix = matrix.flat();
     for (let i=0; i<winFlatArr.length; i++){
@@ -214,6 +219,8 @@ function isWin(matrix) {
             return false;
         }
     }
+    localStorage.setItem("" + moves, gameTimeNumbers);
+    resultsArray.push(localStorage.getItem('' + moves))
     active = false;
     return true;
 }
@@ -241,3 +248,13 @@ openPopUp.addEventListener('click', function (e) {
 closePopUp.addEventListener('click', () => {
     popUp.classList.remove('active');
 })
+
+const resultsArray = [];
+
+let resultsBlock = document.getElementById('results-list');
+let str = ' ';
+
+for(let i=0; i<resultsArray.length; i++){
+    if(resultsArray[i] !== undefined) str += "Moves: " + moves + " Time: " + resultsArray[i] + '<br>';
+}
+resultsBlock.innerHTML = str;
