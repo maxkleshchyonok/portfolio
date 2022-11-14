@@ -268,4 +268,45 @@
   background-color: #ea9a0c;
 }
 
+@media (max-width: 640px) {
+  .container .main .quiz {
+    height: 700px;
+  }
+  .container .main .quiz .quiz_question-block .question_image {
+    width: 60px;
+    height: 60px;
+  }
+  .container .main .quiz .quiz_question-block .question .question_elements .player .vol {
+    display: none;
+  }
+  .container .main .quiz .quiz_question-block .question .question_elements .player .slider_container .current_time {
+    display: none;
+  }
+  .container .main .quiz .quiz_question-block .question .question_elements .player .slider_container .total-duration {
+    display: none;
+  }
+  .container .main .quiz .answers {
+    flex-direction: column;
+  }
+  .container .main .quiz .answers .answers_options {
+    width: 90%;
+    height: 150px;
+    margin-top: 10%;
+  }
+  .container .main .quiz .answers .answers_info {
+    margin-top: 7%;
+    width: 90%;
+  }
+  .container .main .quiz .answers .answers_info .image-and-names {
+    flex-direction: column;
+  }
+  .container .main .quiz .next-button {
+    width: 100px;
+    height: 60px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 30px;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
