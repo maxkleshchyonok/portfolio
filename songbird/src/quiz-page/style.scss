@@ -57,7 +57,7 @@
           color: white;
           font-weight: 600;
           font-size: 24px;
-
+          margin-top: 1%;
           p {
             margin-right: 5%;
           }
@@ -88,9 +88,11 @@
               color: white;
               margin-bottom: 2%;
             }
-
+            .bird-name_hide{
+              display: none;
+            }
             .player {
-              height: 20px;
+              height: 30px;
               width: 80%;
               border: 1px solid transparent;
               padding: 10px;
@@ -188,6 +190,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
         .answers_options {
           width: 30%;
           height: 200px;
@@ -198,13 +201,87 @@
             list-style-type: none;
             margin-left: 5%;
             margin-top: 5%;
+
+            li {
+              label {
+
+              }
+
+              .red-color {
+                color: red;
+              }
+
+              .green-color {
+                color: green;
+              }
+            }
           }
         }
 
+
+        .answers_info::-webkit-scrollbar{
+          width: 0;
+        }
         .answers_info {
           width: 70%;
           height: 200px;
           background-color: rgba(196, 192, 192, 0.75);
+            overflow: scroll;
+          .choose-advice{
+            color: #626262;
+            font-size: 20px;
+            text-align: center;
+            margin-top: 10%;
+          }
+          .hide{
+            display: none;
+          }
+          .image-and-names {
+            display: flex;
+            justify-content: left;
+            margin-top: 2%;
+            margin-left: 2%;
+            .answer-image {
+              display: none;
+              width: 200px;
+              height: 110px;
+              object-fit: cover;
+              border-radius: 5px;
+            }
+
+            .birds-name-voice {
+              width: 70%;
+                .answer-bird-name{
+                  color: white;
+                  margin-left: 3%;
+                }
+              .answer-bird-species{
+                color: #626262;
+                margin-left: 3%;
+              }
+              .show{
+                display: block;
+              }
+              .info-audio{
+                display: none;
+                height: 30px;
+                width: 60%;
+                margin-left: 3%;
+                margin-top: 1%;
+              }
+            }
+          }
+          .hide-image-and-names{
+            display: none;
+          }
+          .bird-info{
+            overflow: hidden;
+            margin-top: 3%;
+            margin-left: 2%;
+          }
+          .description-hide{
+            display: none;
+          }
         }
       }
       .next-button{

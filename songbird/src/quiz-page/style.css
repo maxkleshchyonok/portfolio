@@ -52,6 +52,7 @@
   color: white;
   font-weight: 600;
   font-size: 24px;
+  margin-top: 1%;
 }
 .container .main .quiz .quiz_info .score p {
   margin-right: 5%;
@@ -82,8 +83,11 @@
   color: white;
   margin-bottom: 2%;
 }
+.container .main .quiz .quiz_question-block .question .question_elements .bird-name_hide {
+  display: none;
+}
 .container .main .quiz .quiz_question-block .question .question_elements .player {
-  height: 20px;
+  height: 30px;
   width: 80%;
   border: 1px solid transparent;
   padding: 10px;
@@ -176,10 +180,74 @@
   margin-left: 5%;
   margin-top: 5%;
 }
+.container .main .quiz .answers .answers_options .answers_list li .red-color {
+  color: red;
+}
+.container .main .quiz .answers .answers_options .answers_list li .green-color {
+  color: green;
+}
+.container .main .quiz .answers .answers_info::-webkit-scrollbar {
+  width: 0;
+}
 .container .main .quiz .answers .answers_info {
   width: 70%;
   height: 200px;
   background-color: rgba(196, 192, 192, 0.75);
+  overflow: scroll;
+}
+.container .main .quiz .answers .answers_info .choose-advice {
+  color: #626262;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 10%;
+}
+.container .main .quiz .answers .answers_info .hide {
+  display: none;
+}
+.container .main .quiz .answers .answers_info .image-and-names {
+  display: flex;
+  justify-content: left;
+  margin-top: 2%;
+  margin-left: 2%;
+}
+.container .main .quiz .answers .answers_info .image-and-names .answer-image {
+  display: none;
+  width: 200px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.container .main .quiz .answers .answers_info .image-and-names .birds-name-voice {
+  width: 70%;
+}
+.container .main .quiz .answers .answers_info .image-and-names .birds-name-voice .answer-bird-name {
+  color: white;
+  margin-left: 3%;
+}
+.container .main .quiz .answers .answers_info .image-and-names .birds-name-voice .answer-bird-species {
+  color: #626262;
+  margin-left: 3%;
+}
+.container .main .quiz .answers .answers_info .image-and-names .birds-name-voice .show {
+  display: block;
+}
+.container .main .quiz .answers .answers_info .image-and-names .birds-name-voice .info-audio {
+  display: none;
+  height: 30px;
+  width: 60%;
+  margin-left: 3%;
+  margin-top: 1%;
+}
+.container .main .quiz .answers .answers_info .hide-image-and-names {
+  display: none;
+}
+.container .main .quiz .answers .answers_info .bird-info {
+  overflow: hidden;
+  margin-top: 3%;
+  margin-left: 2%;
+}
+.container .main .quiz .answers .answers_info .description-hide {
+  display: none;
 }
 .container .main .quiz .next-button {
   margin-top: 2%;
