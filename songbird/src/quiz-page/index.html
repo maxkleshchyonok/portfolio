@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Qwigley&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <title>Songbird</title>
+</head>
+<body>
+<div class="container">
+    <main class="main">
+        <img class="main_background" src="../assets/images/birds.PNG" alt="birds">
+        <div class="quiz">
+            <div class="quiz_info">
+                <a class="info_logo" href="../start-page/index.html">Songbird</a>
+                <div class="score"><p>Score:</p><p class="score_number">10</p></div>
+            </div>
+            <div class="quiz_question-block">
+                <img class="question_image">
+                <div class="question">
+                    <div class="question_elements">
+                    <h1 class="bird-name"></h1>
+<!--                    <audio controls src="https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3"></audio>-->
+                    <div class="player">
+
+                        <div class="buttons">
+                            <button class="buttons_play">
+                                <img src="../assets/images/play.png">
+                            </button>
+                        </div>
+                            <div class="slider_container seek">
+                                <div class="current_time">00:00</div>
+                                <input class="seek_slider" type="range" min="1" max="100" value="0" onchange="seekTo()">
+                                <div class="total-duration">00:00</div>
+                            </div>
+                            <div class="slider_container vol">
+                                <img class="low-volume" src="../assets/images/volume.png">
+                                <input class="volume_slider" type="range" min="1" max="100" value="50" onchange="setVolume()">
+                                <img class="high-volume" src="../assets/images/volume.png">
+                            </div>
+
+
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="answers">
+                <div class="answers_options">
+                    <ul class="answers_list">
+<!--                        <li>-->
+<!--                            <label>-->
+<!--                                <input type="radio" name="q1">-->
+<!--                                грач-->
+<!--                            </label>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <label>-->
+<!--                                <input type="radio" name="q1">-->
+<!--                                ворон-->
+<!--                            </label>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <label>-->
+<!--                                <input type="radio" name="q1">-->
+<!--                                дрозд-->
+<!--                            </label>-->
+<!--                        </li>-->
+                    </ul>
+                </div>
+                <div class="answers_info">
+                    <h1 class="choose-advice">Listen to a bird song and choose its name</h1>
+                    <div class="image-and-names">
+                    <img class="answer-image">
+                    <div class="birds-name-voice">
+                        <h1 class="answer-bird-name"></h1>
+                        <h2 class="answer-bird-species"></h2>
+                            <audio class="info-audio" controls></audio>
+                    </div>
+                    </div>
+                    <p class="bird-info"></p>
+                </div>
+            </div>
+            <button class="next-button">Next</button>
+        </div>
+    </main>
+</div>
+<script src="./script.js"></script>
+</body>
+</html>
