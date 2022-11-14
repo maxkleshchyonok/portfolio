@@ -305,3 +305,58 @@
     }
   }
 }
+
+@media (max-width: 640px) {
+  .container{
+    .main{
+      .quiz{
+        height: 700px;
+        .quiz_question-block{
+          .question_image{
+            width: 60px;
+            height: 60px;
+          }
+          .question{
+            .question_elements{
+              .player{
+                .vol{
+                  display: none;
+                }
+                .slider_container{
+                  .current_time{
+                    display: none;
+                  }
+                  .total-duration{
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .answers{
+          flex-direction: column;
+          .answers_options{
+            width: 90%;
+            height: 150px;
+            margin-top: 10%;
+          }
+          .answers_info{
+            margin-top: 7%;
+            width: 90%;
+            .image-and-names{
+              flex-direction: column;
+            }
+          }
+        }
+        .next-button{
+          width: 100px;
+          height: 60px;
+          margin-top: 5%;
+          margin-bottom: 5%;
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}
