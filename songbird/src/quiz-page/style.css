@@ -270,11 +270,23 @@
 
 @media (max-width: 640px) {
   .container .main .quiz {
+    width: 90%;
     height: 700px;
   }
+  .container .main .quiz .quiz_info {
+    margin-left: -2%;
+  }
+  .container .main .quiz .quiz_info .score {
+    margin-top: 5%;
+    margin-left: 15%;
+  }
+  .container .main .quiz .quiz_question-block {
+    margin-top: 2%;
+  }
   .container .main .quiz .quiz_question-block .question_image {
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
+    margin-left: 0;
   }
   .container .main .quiz .quiz_question-block .question .question_elements .player .vol {
     display: none;
@@ -287,6 +299,8 @@
   }
   .container .main .quiz .answers {
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .container .main .quiz .answers .answers_options {
     width: 90%;
@@ -296,9 +310,24 @@
   .container .main .quiz .answers .answers_info {
     margin-top: 7%;
     width: 90%;
+    padding-left: 3%;
+    padding-right: 3%;
   }
   .container .main .quiz .answers .answers_info .image-and-names {
     flex-direction: column;
+    margin-left: 0;
+    padding-top: 5%;
+  }
+  .container .main .quiz .answers .answers_info .image-and-names .answer-image {
+    margin: auto;
+  }
+  .container .main .quiz .answers .answers_info .image-and-names .birds-name-voice {
+    margin-top: 3%;
+  }
+  .container .main .quiz .answers .answers_info .image-and-names .birds-name-voice .info-audio {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    width: 120%;
   }
   .container .main .quiz .next-button {
     width: 100px;
@@ -306,6 +335,7 @@
     margin-top: 5%;
     margin-bottom: 5%;
     font-size: 30px;
+    border-radius: 10px;
   }
 }
 
