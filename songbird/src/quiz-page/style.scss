@@ -310,11 +310,21 @@
   .container{
     .main{
       .quiz{
+        width: 90%;
         height: 700px;
+        .quiz_info{
+          margin-left: -2%;
+          .score{
+            margin-top: 5%;
+            margin-left: 15%;
+          }
+        }
         .quiz_question-block{
+          margin-top: 2%;
           .question_image{
-            width: 60px;
-            height: 60px;
+            width: 100px;
+            height: 100px;
+            margin-left: 0;
           }
           .question{
             .question_elements{
@@ -336,6 +346,8 @@
         }
         .answers{
           flex-direction: column;
+          align-items: center;
+          justify-content: center;
           .answers_options{
             width: 90%;
             height: 150px;
@@ -344,8 +356,23 @@
           .answers_info{
             margin-top: 7%;
             width: 90%;
+            padding-left: 3%;
+            padding-right: 3%;
             .image-and-names{
               flex-direction: column;
+              margin-left: 0;
+              padding-top: 5%;
+              .answer-image{
+                margin: auto;
+              }
+              .birds-name-voice{
+                margin-top: 3%;
+                .info-audio{
+                  margin-top: 3%;
+                  margin-bottom: 3%;
+                  width: 120%;
+                }
+              }
             }
           }
         }
@@ -355,6 +382,7 @@
           margin-top: 5%;
           margin-bottom: 5%;
           font-size: 30px;
+          border-radius: 10px;
         }
       }
     }
