@@ -13,9 +13,9 @@ html{
   left: 0;
   top: 0;
   font-family: "Montserrat", sans-serif;
-
   .main {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     .main_background {
@@ -46,12 +46,29 @@ html{
         text-decoration: none;
       }
       h2{
-        font-family: "Montserrat", sans-serif;
+
         color: white;
         font-weight: 600;
         font-size: 30px;
         margin-top: 3%;
+        p{
+          text-align: center;
+          color: orange;
+        }
       }
+    }
+    .exit-button{
+      margin-top: 5%;
+      position: relative;
+      z-index: 3;
+      background: linear-gradient(150deg, rgba(27,150,209,1) 22%, rgba(232,118,69,1) 77%);
+      width: 120px;
+      height: 80px;
+      border-radius: 10px;
+      border: 1px solid gray;
+      color: white;
+      font-size: 30px;
+      box-shadow: 3px 10px 10px 1px gray;
     }
   }
 }
@@ -64,6 +81,10 @@ html{
         width: 80%;
         h2{
           margin-top: 5%;
+          p{
+            margin-top: 5%;
+            font-size: 40px;
+          }
         }
       }
     }

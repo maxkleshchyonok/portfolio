@@ -602,9 +602,11 @@ const birdsData = [
 
 
 let iterator = 0;
+let scoreRaund = 5;
+let scoreTotal = 0;
 let birdsAllInfo = birdsData[iterator];
 console.log(birdsAllInfo)
-
+let correctAnswerAudio = document.createElement('audio');
 
 
 
@@ -617,9 +619,11 @@ let volumeSlider = document.querySelector('.volume_slider');
 let currentTime = document.querySelector('.current_time');
 let totalTime = document.querySelector('.total-duration');
 let birdName = document.querySelector('.bird-name');
+let score = document.querySelector('.score_number');
+let birdHiddenName = document.querySelector('.hidden-name');
 
-
-
+score.textContent = scoreTotal;
+nextButton.disabled = true;
 
 let currentTrack = document.createElement('audio');
 
@@ -732,14 +736,20 @@ document.querySelector('.bird-name').classList.add('bird-name_hide');
 
 nextButton.addEventListener('click', ()=>{
     iterator += 1;
+    console.log(iterator)
+    console.log(birdsData.length)
+    if(iterator === birdsData.length){
+        // document.querySelector('.score-amount').textContent = '5';
+        window.location.href = '../results-page/index.html'
+    }
     birdsAllInfo = birdsData[iterator];
     console.log(birdsAllInfo)
     randomTrack();
     nextTrack();
-    console.log(iterator);
     for(let i=0; i<6;i++){
         removePrevious()
     }
+    scoreRaund = 5;
     hideInfo();
     uploadQuiz();
 })
@@ -792,8 +802,18 @@ function uploadQuiz() {
                 label.classList.add('green-color');
                 questionImage.src = birdsAllInfo[trackIndex].image;
                 document.querySelector('.bird-name').classList.remove('bird-name_hide')
+                scoreTotal += scoreRaund;
+                score.textContent = scoreTotal;
+                nextButton.disabled = false;
+                birdHiddenName.style.display = 'none';
+                pauseTrack();
+                new Audio('../assets/audio/correct.mp3').play();
+                localStorage.setItem('score', scoreTotal);
             } else {
                 label.classList.add('red-color')
+                scoreRaund -= 1;
+                new Audio('../assets/audio/incorrect.mp3').play();
+                liInput.disabled = true;
             }
             inputid = liInput.id;
             console.log(inputid);
@@ -812,7 +832,7 @@ function uploadQuiz() {
 
 uploadQuiz();
 
-
-setTimeout(()=>{
-    alert('Здравтсвуйте! Не могли бы вы перенести проверку на последний день кросс-чека? В данный момент всё активно дорабатываю. Спасибо :) ')
-}, 1000)
+//
+// setTimeout(()=>{
+//     alert('Здравтсвуйте! Не могли бы вы перенести проверку на последний день кросс-чека? В данный момент всё активно дорабатываю. Спасибо :) ')
+// }, 1000)

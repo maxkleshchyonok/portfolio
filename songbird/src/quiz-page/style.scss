@@ -36,6 +36,7 @@
       height: 600px;
       z-index: 2;
       background-color: rgba(107, 107, 107, 0.82);
+      border-radius: 5px;
       display: flex;
       align-items: center;
       flex-direction: column;
@@ -87,6 +88,10 @@
             .bird-name {
               color: white;
               margin-bottom: 2%;
+            }
+            .hidden-name{
+              color: white;
+              font-size: 30px;
             }
             .bird-name_hide{
               display: none;
@@ -196,15 +201,29 @@
           height: 200px;
           background-color: rgba(196, 192, 192, 0.75);
           margin-right: 3%;
-
+          border-radius: 15px;
+          display: flex;
+          align-items: center;
+          justify-content: left;
           .answers_list {
             list-style-type: none;
             margin-left: 5%;
-            margin-top: 5%;
 
             li {
-              label {
 
+              label {
+                font-weight: 600;
+                font-size: 20px;
+                color: #626262;
+                cursor: pointer;
+                transition: .5s ease;
+                input{
+                  display: none;
+                }
+              }
+
+              label:hover{
+                font-size: 25px;
               }
 
               .red-color {
@@ -212,9 +231,12 @@
               }
 
               .green-color {
+                font-size: 25px;
                 color: green;
               }
             }
+
+
           }
         }
 
@@ -225,6 +247,7 @@
         .answers_info {
           width: 70%;
           height: 200px;
+          border-radius: 15px;
           background-color: rgba(196, 192, 192, 0.75);
             overflow: scroll;
           .choose-advice{
@@ -298,6 +321,14 @@
         font-size: 16px;
         cursor: pointer;
       }
+      .next-button:disabled{
+        background-color: #626262;
+      }
+      .next-button:disabled:hover{
+        font-size: 16px;
+        background-color: #626262;
+        cursor: default;
+      }
       .next-button:hover{
         font-size: 18px;
         background-color: #ea9a0c;
@@ -311,7 +342,7 @@
     .main{
       .quiz{
         width: 90%;
-        height: 700px;
+        height: 620px;
         .quiz_info{
           margin-left: -2%;
           .score{
@@ -350,8 +381,17 @@
           justify-content: center;
           .answers_options{
             width: 90%;
-            height: 150px;
-            margin-top: 10%;
+            height: 110px;
+            margin-top: 3%;
+            display: flex;
+            justify-content: center;
+            .answers_list{
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              grid-column-gap: 5%;
+              text-align: center;
+              margin-left: 0;
+            }
           }
           .answers_info{
             margin-top: 7%;
@@ -379,9 +419,9 @@
         .next-button{
           width: 100px;
           height: 60px;
-          margin-top: 5%;
+          margin-top: 4%;
           margin-bottom: 5%;
-          font-size: 30px;
+          font-size: 20px;
           border-radius: 10px;
         }
       }
