@@ -784,7 +784,7 @@ function uploadQuiz() {
         let infoPlayer = document.querySelector('.info-audio');
         let infoAdvice = document.querySelector('.choose-advice');
 
-
+        nextButton.disabled = true;
 
         label.textContent = birdsAllInfo[i].name;
 

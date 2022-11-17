@@ -302,7 +302,7 @@
 @media (max-width: 640px) {
   .container .main .quiz {
     width: 90%;
-    height: 620px;
+    height: 600px;
   }
   .container .main .quiz .quiz_info {
     margin-left: -2%;
@@ -374,7 +374,7 @@
     height: 60px;
     margin-top: 4%;
     margin-bottom: 5%;
-    font-size: 20px;
+    font-size: 22px;
     border-radius: 10px;
   }
 }
