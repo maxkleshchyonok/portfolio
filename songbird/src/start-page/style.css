@@ -125,6 +125,8 @@ html {
   .container .header .header-navigation {
     margin-left: 5%;
     width: 60%;
+    display: flex;
+    justify-content: center;
   }
   .container .header .header-navigation a {
     text-decoration: none;

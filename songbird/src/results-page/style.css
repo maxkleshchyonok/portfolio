@@ -16,6 +16,7 @@ html {
 }
 .container .main {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -48,11 +49,27 @@ html {
   text-decoration: none;
 }
 .container .main .main_info h2 {
-  font-family: "Montserrat", sans-serif;
   color: white;
   font-weight: 600;
   font-size: 30px;
   margin-top: 3%;
+}
+.container .main .main_info h2 p {
+  text-align: center;
+  color: orange;
+}
+.container .main .exit-button {
+  margin-top: 5%;
+  position: relative;
+  z-index: 3;
+  background: linear-gradient(150deg, rgb(27, 150, 209) 22%, rgb(232, 118, 69) 77%);
+  width: 120px;
+  height: 80px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  color: white;
+  font-size: 30px;
+  box-shadow: 3px 10px 10px 1px gray;
 }
 
 @media (max-width: 640px) {
@@ -62,6 +79,10 @@ html {
   }
   .container .main .main_info h2 {
     margin-top: 5%;
+  }
+  .container .main .main_info h2 p {
+    margin-top: 5%;
+    font-size: 40px;
   }
 }
 

@@ -808,6 +808,7 @@ function uploadQuiz() {
                 birdHiddenName.style.display = 'none';
                 pauseTrack();
                 new Audio('../assets/audio/correct.mp3').play();
+                localStorage.setItem('score', scoreTotal);
             } else {
                 label.classList.add('red-color')
                 scoreRaund -= 1;
