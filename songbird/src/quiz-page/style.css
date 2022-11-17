@@ -83,6 +83,10 @@
   color: white;
   margin-bottom: 2%;
 }
+.container .main .quiz .quiz_question-block .question .question_elements .hidden-name {
+  color: white;
+  font-size: 30px;
+}
 .container .main .quiz .quiz_question-block .question .question_elements .bird-name_hide {
   display: none;
 }
@@ -174,16 +178,32 @@
   height: 200px;
   background-color: rgba(196, 192, 192, 0.75);
   margin-right: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
 }
 .container .main .quiz .answers .answers_options .answers_list {
   list-style-type: none;
   margin-left: 5%;
-  margin-top: 5%;
+}
+.container .main .quiz .answers .answers_options .answers_list li label {
+  font-weight: 600;
+  font-size: 20px;
+  color: #626262;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.container .main .quiz .answers .answers_options .answers_list li label input {
+  display: none;
+}
+.container .main .quiz .answers .answers_options .answers_list li label:hover {
+  font-size: 25px;
 }
 .container .main .quiz .answers .answers_options .answers_list li .red-color {
   color: red;
 }
 .container .main .quiz .answers .answers_options .answers_list li .green-color {
+  font-size: 25px;
   color: green;
 }
 .container .main .quiz .answers .answers_info::-webkit-scrollbar {
@@ -262,6 +282,14 @@
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
+}
+.container .main .quiz .next-button:disabled {
+  background-color: #626262;
+}
+.container .main .quiz .next-button:disabled:hover {
+  font-size: 16px;
+  background-color: #626262;
+  cursor: default;
 }
 .container .main .quiz .next-button:hover {
   font-size: 18px;
