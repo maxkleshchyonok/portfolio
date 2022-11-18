@@ -621,6 +621,7 @@ let totalTime = document.querySelector('.total-duration');
 let birdName = document.querySelector('.bird-name');
 let score = document.querySelector('.score_number');
 let birdHiddenName = document.querySelector('.hidden-name');
+let infoAdvice = document.querySelector('.choose-advice');
 
 score.textContent = scoreTotal;
 nextButton.disabled = true;
@@ -772,6 +773,16 @@ function hideInfo() {
     document.querySelector('.bird-name').classList.add('bird-name_hide')
 }
 
+function showInfo() {
+    let infoImageName = document.querySelector('.image-and-names');
+    let infoDescription = document.querySelector('.bird-info');
+    let advice = document.querySelector('.choose-advice');
+    infoImageName.classList.remove('hide-image-and-names')
+    infoDescription.classList.remove('description-hide')
+    advice.classList.add('hide')
+    document.querySelector('.bird-name').classList.remove('bird-name_hide')
+}
+
 function uploadQuiz() {
     for (let i=0;i<birdsAllInfo.length;i++){
         let nodeLi = document.createElement('li');
@@ -782,7 +793,7 @@ function uploadQuiz() {
         let birdSpecies = document.querySelector('.answer-bird-species');
         let birdInfo = document.querySelector('.bird-info');
         let infoPlayer = document.querySelector('.info-audio');
-        let infoAdvice = document.querySelector('.choose-advice');
+
 
         nextButton.disabled = true;
 
@@ -809,6 +820,7 @@ function uploadQuiz() {
                 pauseTrack();
                 new Audio('../assets/audio/correct.mp3').play();
                 localStorage.setItem('score', scoreTotal);
+                showInfo();
             } else {
                 label.classList.add('red-color')
                 scoreRaund -= 1;
@@ -825,7 +837,6 @@ function uploadQuiz() {
             infoPlayer.src = birdsAllInfo[Number(inputid)].audio;
             // infoPlayer.classList.add('show')
             infoPlayer.style.display = 'block';
-            infoAdvice.classList.add('hide')
         })
     }
 }
