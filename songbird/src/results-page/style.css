@@ -70,6 +70,7 @@ html {
   color: white;
   font-size: 30px;
   box-shadow: 3px 10px 10px 1px gray;
+  cursor: pointer;
 }
 
 @media (max-width: 640px) {

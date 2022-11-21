@@ -799,7 +799,8 @@ function uploadQuiz() {
 
         label.textContent = birdsAllInfo[i].name;
 
-        let inputid = ''
+        let inputid = '';
+        let isAnswered = false;
 
         liInput.setAttribute('type', 'radio')
         liInput.setAttribute('id', `${i}`)
@@ -821,11 +822,14 @@ function uploadQuiz() {
                 new Audio('../assets/audio/correct.mp3').play();
                 localStorage.setItem('score', scoreTotal);
                 showInfo();
+                isAnswered = true;
             } else {
-                label.classList.add('red-color')
-                scoreRaund -= 1;
-                new Audio('../assets/audio/incorrect.mp3').play();
-                liInput.disabled = true;
+                if(isAnswered === false) {
+                    label.classList.add('red-color')
+                    scoreRaund -= 1;
+                    new Audio('../assets/audio/incorrect.mp3').play();
+                    liInput.disabled = true;
+                }
             }
             inputid = liInput.id;
             console.log(inputid);

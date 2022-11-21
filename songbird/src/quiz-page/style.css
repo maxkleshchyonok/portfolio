@@ -28,7 +28,7 @@
   position: relative;
   margin-top: 10%;
   width: 80%;
-  height: 600px;
+  height: 620px;
   z-index: 2;
   background-color: rgba(107, 107, 107, 0.82);
   border-radius: 5px;
@@ -167,6 +167,9 @@
   width: 125%;
   object-fit: cover;
 }
+.container .main .quiz .quiz_question-block .question .question_elements .player .buttons .buttons_play:hover img {
+  width: 135%;
+}
 .container .main .quiz .answers {
   width: 90%;
   margin-top: 5%;
@@ -274,12 +277,12 @@
 }
 .container .main .quiz .next-button {
   margin-top: 2%;
-  width: 10%;
-  height: 30px;
+  width: 7%;
+  height: 40px;
   outline: none;
   border: none;
   border-radius: 3px;
-  background-color: #cb870e;
+  background-color: #83a9d5;
   color: white;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
@@ -296,7 +299,7 @@
 }
 .container .main .quiz .next-button:hover {
   font-size: 18px;
-  background-color: #ea9a0c;
+  background-color: #9bc1ee;
 }
 
 @media (max-width: 640px) {
