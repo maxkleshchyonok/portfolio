@@ -33,7 +33,7 @@
       position: relative;
       margin-top: 10%;
       width: 80%;
-      height: 600px;
+      height: 620px;
       z-index: 2;
       background-color: rgba(107, 107, 107, 0.82);
       border-radius: 5px;
@@ -183,6 +183,11 @@
                     object-fit: cover;
                   }
                 }
+                .buttons_play:hover{
+                  img{
+                    width: 135%;
+                  }
+                }
               }
             }
           }
@@ -309,12 +314,12 @@
       }
       .next-button{
         margin-top: 2%;
-        width: 10%;
-        height: 30px;
+        width: 7%;
+        height: 40px;
         outline: none;
         border: none;
         border-radius: 3px;
-        background-color: #cb870e;
+        background-color: #83a9d5;
         color: white;
         font-family: "Montserrat", sans-serif;
         font-weight: 600;
@@ -331,7 +336,7 @@
       }
       .next-button:hover{
         font-size: 18px;
-        background-color: #ea9a0c;
+        background-color: #9bc1ee;
       }
     }
   }
