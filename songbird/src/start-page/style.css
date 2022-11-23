@@ -101,16 +101,15 @@ html {
   background-color: rgba(107, 107, 107, 0.82);
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
 }
 .container .footer .footer-logo {
-  margin-left: 20%;
   width: 50px;
   height: 50px;
 }
 .container .footer .footer_school {
   text-decoration: none;
-  margin-right: 79%;
+  margin-right: 2%;
 }
 .container .footer .footer_created-by,
 .container .footer .footer_year {

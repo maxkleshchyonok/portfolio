@@ -823,6 +823,7 @@ function uploadQuiz() {
                 localStorage.setItem('score', scoreTotal);
                 showInfo();
                 isAnswered = true;
+                liInput.disabled = true;
             } else {
                 if(isAnswered === false) {
                     label.classList.add('red-color')
