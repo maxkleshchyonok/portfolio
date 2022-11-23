@@ -632,6 +632,7 @@ let trackIndex = 0;
 let isPlaying = false;
 let isRandom = false;
 let updateTimer;
+let currentId = 1;
 
 loadTrack(trackIndex);
 
@@ -737,6 +738,9 @@ document.querySelector('.bird-name').classList.add('bird-name_hide');
 
 nextButton.addEventListener('click', ()=>{
     iterator += 1;
+    currentId += 1;
+    let prevBirdType = document.getElementById(`${currentId - 1}`);
+    prevBirdType.classList.remove('active');
     console.log(iterator)
     console.log(birdsData.length)
     if(iterator === birdsData.length){
@@ -793,7 +797,10 @@ function uploadQuiz() {
         let birdSpecies = document.querySelector('.answer-bird-species');
         let birdInfo = document.querySelector('.bird-info');
         let infoPlayer = document.querySelector('.info-audio');
+        let currentBirdType = document.getElementById(`${currentId}`);
 
+
+        currentBirdType.classList.add('active');
 
         nextButton.disabled = true;
 
