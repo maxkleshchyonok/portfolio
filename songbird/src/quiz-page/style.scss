@@ -66,6 +66,10 @@
       }
 
       .quiz_question-block {
+        width: 90%;
+        border: 5px solid rgba(196, 192, 192, 0.75);
+        //background: rgba(196, 192, 192, 0.75);
+        border-radius: 15px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -356,10 +360,11 @@
           }
         }
         .quiz_question-block{
+          padding: 1% 0 1% 0;
           margin-top: 2%;
           .question_image{
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             margin-left: 0;
           }
           .question{
