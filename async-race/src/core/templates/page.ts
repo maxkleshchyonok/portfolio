@@ -10,6 +10,7 @@ abstract class Page {
 
   protected createHeaderTitle(text: string): HTMLElement {
     const headerTitle = document.createElement('h1');
+    headerTitle.className = 'header-title';
     headerTitle.innerText = text;
     return headerTitle;
   }

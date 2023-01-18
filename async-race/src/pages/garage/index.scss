@@ -1,0 +1,112 @@
+.header-title{
+  color: rgba(38, 18, 47, 0.77);
+  font-weight: 700;
+  margin-left: 2%;
+}
+.garage-header{
+  .race-all-button{
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+    .race-all-img{
+      width: 60%;
+    }
+    .race-all-text{
+      margin-top: -1%;
+    }
+  }
+}
+.garage-block{
+  width: 100%;
+  .car-block{
+    margin-bottom: 2%;
+    .info-buttons{
+      width: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      button{
+        font-weight: 300;
+        font-size: 16px;
+        color: white;
+        background: blueviolet;
+        border: none;
+        border-radius: 3px;
+        box-shadow: 4px 5px 10px #1f1a56;
+        width: 30%;
+        height: 30px;
+        transition: .2s ease-in-out;
+        cursor: pointer;
+      }
+      button:hover{
+        width: 32%;
+        font-size: 18px;
+      }
+    }
+    .control-buttons{
+      margin-left: 1%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 9%;
+      button{
+        width: 40%;
+        font-weight: 300;
+        font-size: 14px;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        height: 25px;
+        transition: .2s ease-in-out;
+        cursor: pointer;
+      }
+      button:hover{
+        width: 45%;
+        font-size: 16px;
+      }
+      .start-button{
+        background: forestgreen;
+        box-shadow: 3px 5px 10px #054605;
+      }
+      .stop-button{
+        background: #d7063e;
+        box-shadow: 3px 5px 10px #44030d;
+      }
+    }
+    .race-images{
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+      .car-image{
+        object-fit: cover;
+        width: 7%;
+        z-index: 3;
+        position: relative;
+        margin-top: 2%;
+        margin-left: 3%;
+      }
+      .finish-image{
+        object-fit: scale-down;
+        width: 7%;
+        z-index: 2;
+        position: relative;
+        margin-top: -1%;
+        margin-left: -10%;
+      }
+    }
+    .road{
+      margin-left: 1%;
+      margin-top: -4%;
+      position: relative;
+      z-index: 1;
+      width: 95%;
+      height: 40px;
+      background: #646161;
+      transform: skewX(-50deg);
+      border: 5px dashed #e5ba0d;
+    }
+  }
+}

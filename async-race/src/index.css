@@ -1,5 +1,12 @@
+html {
+  overflow-x: hidden;
+}
+
 body {
+  font-family: "Quicksand", sans-serif;
   width: 100%;
+  height: 900px;
+  background: rgba(206, 78, 78, 0.58);
 }
 body .header-container {
   width: 10%;
