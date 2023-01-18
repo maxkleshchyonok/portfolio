@@ -1,0 +1,12 @@
+body {
+  width: 100%;
+}
+body .header-container {
+  width: 10%;
+}
+body .header-container div {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/*# sourceMappingURL=index.css.map */
