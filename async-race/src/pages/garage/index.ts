@@ -1,5 +1,5 @@
 import Page from '../../core/templates/page';
-import { CarType, CreateCar, UpdateCar } from '../../core/types/types';
+import { CarsInfo, CarType, CreateCar, UpdateCar } from '../../core/types/types';
 import { CarsArray } from '../../assets/cars/carsArray';
 import './index.css';
 
@@ -14,12 +14,24 @@ class Garage extends Page {
 
     const garageBlock = document.createElement('div');
     garageBlock.className = 'garage-block';
+
+    let carsInfo: CarsInfo[] = [];
+
     fetch('http://127.0.0.1:3000/garage')
       .then(response => response.json())
       .then(result => {
         console.log(result);
         result.forEach((item: CarType) => {
           console.log(item);
+
+          let infoEl = {
+            name: item.name,
+            color: item.color,
+            id: item.id,
+          };
+
+          carsInfo.push(infoEl);
+
           const car = document.createElement('div');
           car.className = 'car-block';
 
@@ -73,6 +85,7 @@ class Garage extends Page {
           const road = document.createElement('div');
           raceImages.className = 'race-images';
           carImage.className = 'car-image';
+          carImage.id = item.id.toString(10);
           finishImage.className = 'finish-image';
           finishImage.src = 'https://i.pinimg.com/originals/c4/02/71/c40271fd53a764efd9977469270398af.png';
           road.className = 'road';
@@ -128,6 +141,40 @@ class Garage extends Page {
     });
     raceAllImg.addEventListener('mouseout', () => {
       raceAllText.innerText = 'Race!';
+    });
+
+    raceAllImg.addEventListener('click', async () => {
+      console.log(carsInfo);
+
+      let urls: string[] = [];
+      let carDetails = new Map();
+
+      carsInfo.forEach(el => {
+        let url = `http://127.0.0.1:3000/engine?id=${el.id}&status=started`;
+        urls.push(url);
+        carDetails.set(url, el.id);
+      });
+      console.log(urls);
+      console.log(carDetails)
+
+
+       const carsRequests = await Promise.all(urls.map(async url => {
+        const response = await fetch(url, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+          },
+        });
+         const res = await response.json();
+
+        console.log(res, carDetails.get(url));
+
+        let carID = carDetails.get(url);
+
+          const car = document.getElementById(carID.toString());
+          car!.style.transition = `${res.distance / res.velocity + 0.5 }ms ease`;
+          car!.style.transform = `translate(${res.distance / 365}%, 0)`;
+      }));
     });
 
     raceAllButton.append(raceAllImg, raceAllText);

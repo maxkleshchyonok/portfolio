@@ -13,3 +13,10 @@ export type UpdateCar = {
   name: string;
   color: string;
 }
+
+export type CarsInfo = {
+    name: string;
+    color: string;
+    id: number;
+}
+
