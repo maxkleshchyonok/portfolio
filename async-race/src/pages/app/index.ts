@@ -2,7 +2,7 @@ import Garage from '../garage';
 import Winners from '../winners';
 import Page from '../../core/templates/page';
 import Header from '../../core/components/header';
-import ErrorPage, {ErrorTypes} from '../error';
+import ErrorPage, { ErrorTypes } from '../error';
 
 export const enum PageIds {
   GarageID = 'garage-page',
@@ -12,7 +12,7 @@ export const enum PageIds {
 class App {
   private static container: HTMLElement = document.body;
 
-  private static defaultPageId: string = 'current-page';
+  private static defaultPageId = 'current-page';
 
   private initialPage: Garage;
 

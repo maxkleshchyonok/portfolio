@@ -7,7 +7,7 @@ export const enum ErrorTypes {
 class ErrorPage extends Page {
   private errorType: ErrorTypes | string;
 
-  static TextObject: {[prop: string]: string} = {
+  static TextObject: { [prop: string]: string } = {
     '404': 'Error! Page was not found.',
   };
 

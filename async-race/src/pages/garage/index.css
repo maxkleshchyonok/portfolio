@@ -4,8 +4,15 @@
   margin-left: 2%;
 }
 
+.garage-header {
+  width: 52%;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
 .garage-header .race-all-button {
-  width: 10%;
+  width: 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,10 +20,40 @@
   border-radius: 50%;
 }
 .garage-header .race-all-button .race-all-img {
-  width: 60%;
+  width: 80%;
 }
 .garage-header .race-all-button .race-all-text {
   margin-top: -1%;
+}
+.garage-header .form-block {
+  margin-bottom: 5%;
+  background: #6a08d2;
+  box-shadow: 3px 5px 10px #2b2459;
+  border-radius: 10px;
+  width: 45%;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.garage-header .form-block form {
+  margin-left: 8%;
+}
+.garage-header .form-block form input {
+  margin-right: 3%;
+  margin-bottom: 3%;
+}
+.garage-header .form-block form button {
+  background: forestgreen;
+  border: none;
+  box-shadow: 3px 5px 10px #074207;
+  margin-bottom: 4%;
+  color: white;
+  cursor: pointer;
+}
+.garage-header .form-block form button:hover {
+  box-shadow: 3px 5px 10px rgba(7, 66, 7, 0.32);
 }
 
 .garage-block {
@@ -43,6 +80,14 @@
   height: 30px;
   transition: 0.2s ease-in-out;
   cursor: pointer;
+}
+.garage-block .car-block .info-buttons .car-name {
+  width: 30%;
+  margin-left: 5%;
+  color: rgba(38, 18, 47, 0.77);
+}
+.garage-block .car-block .info-buttons .selected {
+  box-shadow: 1px 2px 10px #1f1a56;
 }
 .garage-block .car-block .info-buttons button:hover {
   width: 32%;

@@ -3,3 +3,13 @@ export type CarType = {
   color: string;
   id: number;
 };
+
+export type CreateCar = {
+  name: string;
+  color: string;
+}
+
+export type UpdateCar = {
+  name: string;
+  color: string;
+}
