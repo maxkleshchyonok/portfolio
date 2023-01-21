@@ -1,5 +1,5 @@
 import Page from '../../core/templates/page';
-import { CarsInfo, CarType, CreateCar, UpdateCar } from '../../core/types/types';
+import {CarsInfo, CarType, CreateCar, UpdateCar, WinArr} from '../../core/types/types';
 import { CarsArray } from '../../assets/cars/carsArray';
 import './index.css';
 
@@ -15,6 +15,7 @@ class Garage extends Page {
     const garageBlock = document.createElement('div');
     garageBlock.className = 'garage-block';
 
+
     let carsInfo: CarsInfo[] = [];
 
     fetch('http://127.0.0.1:3000/garage')
@@ -24,14 +25,6 @@ class Garage extends Page {
         result.forEach((item: CarType) => {
           console.log(item);
 
-          let infoEl = {
-            name: item.name,
-            color: item.color,
-            id: item.id,
-          };
-
-          carsInfo.push(infoEl);
-
           const car = document.createElement('div');
           car.className = 'car-block';
 
@@ -39,6 +32,7 @@ class Garage extends Page {
           const selectButton = document.createElement('button');
           const removeButton = document.createElement('button');
           const carName = document.createElement('h2');
+          carName.id = item.name;
           infoButtons.className = 'info-buttons';
           selectButton.className = 'select-button';
           removeButton.className = 'remove-button';
@@ -120,6 +114,18 @@ class Garage extends Page {
 
           carName.innerText = item.name;
           carImage.src = CarsArray[Math.floor(Math.random() * CarsArray.length)];
+
+          let infoEl = {
+            name: item.name,
+            color: item.color,
+            image: carImage.src,
+            id: item.id,
+          };
+
+
+          carsInfo.push(infoEl);
+
+          // localStorage.setItem(`${item.name}`, `${carImage.src}`)
           carImage.style.maskImage = '(red)';
           raceImages.append(carImage, finishImage);
           car.append(infoButtons, controlButtons, raceImages, road);
@@ -142,6 +148,17 @@ class Garage extends Page {
     raceAllImg.addEventListener('mouseout', () => {
       raceAllText.innerText = 'Race!';
     });
+
+    const winBanner = document.createElement('div');
+    let winBannerText = document.createElement('h1');
+    let winBannerImg = document.createElement('img');
+    winBannerImg.className = 'win-banner-img';
+    winBanner.className = 'win-banner';
+    winBannerText.className = 'win-banner-text';
+    winBanner.append(winBannerText, winBannerImg);
+    let winArr: WinArr[] = [];
+
+
 
     raceAllImg.addEventListener('click', async () => {
       console.log(carsInfo);
@@ -166,16 +183,45 @@ class Garage extends Page {
           },
         });
          const res = await response.json();
-
         console.log(res, carDetails.get(url));
 
-        let carID = carDetails.get(url);
+        let winDetails: WinArr = {
+          velocity: res.velocity,
+          id: carDetails.get(url),
+        }
+
+        winArr.push(winDetails);
+
+         let carID = carDetails.get(url);
 
           const car = document.getElementById(carID.toString());
           car!.style.transition = `${res.distance / res.velocity + 0.5 }ms ease`;
           car!.style.transform = `translate(${res.distance / 365}%, 0)`;
+
+
       }));
+      console.log(winArr, 'это винар');
+      function showWin() {
+        winBanner.style.display = 'flex';
+        console.log(winArr.sort((a,b) => a.velocity < b.velocity ? 1 : -1), 'это сорт винар');
+        console.log(winArr[0].id)
+        console.log(document.getElementById(winArr[0].id.toString()))
+
+        carsInfo.forEach(el => {
+          if (el.id === winArr[0].id) {
+            winBannerText.innerText = `WINNER: ${document.getElementById(el.name)!.innerText}!`;
+            winBannerImg.src = el.image;
+          }
+        })
+        function close() {
+          winBanner.style.display = 'none';
+        }
+        setTimeout(close, 5000);
+      }
+      setTimeout(showWin, 7000);
     });
+
+
 
     raceAllButton.append(raceAllImg, raceAllText);
 
@@ -273,10 +319,27 @@ class Garage extends Page {
       });
     });
 
+    const resetButton = document.createElement('button');
+    const resetButtonImg = document.createElement('img');
+    const resetButtonText = document.createElement('h1');
+    resetButtonText.innerText = 'Race again!';
+    resetButtonImg.src = 'https://freesvg.org/img/refresh.png';
+    resetButton.className = 'reset-button';
+    resetButton.append(resetButtonImg, resetButtonText);
+
+    resetButton.addEventListener('click', () => {
+      winArr = [];
+      carsInfo.forEach(el => {
+        const car = document.getElementById(el.id.toString());
+        car!.style.transform = 'none';
+        car!.style.transition = 'none';
+      })
+    });
+
     const garageHeader = document.createElement('div');
     garageHeader.className = 'garage-header';
-    garageHeader.append(raceAllButton, formBlock);
-    this.container.append(garageHeader, garageBlock);
+    garageHeader.append(resetButton, raceAllButton, formBlock);
+    this.container.append(garageHeader,winBanner, garageBlock);
   }
 
   render() {

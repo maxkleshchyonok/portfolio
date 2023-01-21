@@ -16,7 +16,12 @@ export type UpdateCar = {
 
 export type CarsInfo = {
     name: string;
+    image: string;
     color: string;
     id: number;
 }
 
+export type WinArr = {
+    velocity: number;
+    id: number;
+}
