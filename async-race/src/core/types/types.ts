@@ -25,3 +25,15 @@ export type WinArr = {
     velocity: number;
     id: number;
 }
+
+export type EachCar = {
+    id: number,
+    velocity: number,
+    distance: number,
+}
+
+export type WinnersStat = {
+    id: number,
+    time: number,
+    wins: number,
+}

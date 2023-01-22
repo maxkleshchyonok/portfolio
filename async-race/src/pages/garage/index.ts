@@ -1,5 +1,5 @@
 import Page from '../../core/templates/page';
-import {CarsInfo, CarType, CreateCar, UpdateCar, WinArr} from '../../core/types/types';
+import {CarsInfo, CarType, CreateCar, EachCar, UpdateCar, WinArr, WinnersStat} from '../../core/types/types';
 import { CarsArray } from '../../assets/cars/carsArray';
 import './index.css';
 
@@ -17,6 +17,7 @@ class Garage extends Page {
 
 
     let carsInfo: CarsInfo[] = [];
+    let eachRaceInfo: EachCar[] = [];
 
     fetch('http://127.0.0.1:3000/garage')
       .then(response => response.json())
@@ -185,6 +186,14 @@ class Garage extends Page {
          const res = await response.json();
         console.log(res, carDetails.get(url));
 
+        let eachCar = {
+          id: carDetails.get(url),
+          velocity: res.velocity,
+          distance: res.distance,
+        }
+
+        eachRaceInfo.push(eachCar);
+
         let winDetails: WinArr = {
           velocity: res.velocity,
           id: carDetails.get(url),
@@ -201,16 +210,85 @@ class Garage extends Page {
 
       }));
       console.log(winArr, 'это винар');
+
+      let winnersStat: WinnersStat[] = [];
+
       function showWin() {
         winBanner.style.display = 'flex';
         console.log(winArr.sort((a,b) => a.velocity < b.velocity ? 1 : -1), 'это сорт винар');
+        winArr.sort((a,b) => a.velocity < b.velocity ? 1 : -1);
         console.log(winArr[0].id)
         console.log(document.getElementById(winArr[0].id.toString()))
+
+        console.log(eachRaceInfo, 'это тот самый массив')
 
         carsInfo.forEach(el => {
           if (el.id === winArr[0].id) {
             winBannerText.innerText = `WINNER: ${document.getElementById(el.name)!.innerText}!`;
             winBannerImg.src = el.image;
+            eachRaceInfo.forEach(async item => {
+              if(item.id === el.id) {
+                const time = (Math.round(item.distance / item.velocity) / 1000) + 0.5;
+                const winnerCar = {
+                  id: item.id,
+                  time: time,
+                  wins: 1
+                }
+                winnersStat.push(winnerCar);
+                console.log(winnersStat)
+
+                // const fetchPromise = fetch(`http://127.0.0.1:3000/winners/${item.id}`);
+                // fetchPromise.then(response => {
+                //   return response.json();
+                // }).then(rez => {
+                //   console.log(rez, 'это результат промиса');
+                // });
+
+                const response = await fetch(`http://127.0.0.1:3000/winners/${item.id}`, {
+                  method: 'GET',
+                  headers: {
+                    'Content-Type': 'application/json;charset=utf-8',
+                  },
+                });
+                console.log(response.status);
+
+                if(response.status === 404) {
+                  const createWinner = await fetch(`http://127.0.0.1:3000/winners`, {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json;charset=utf-8',
+                    },
+                    body: JSON.stringify(winnerCar),
+                  });
+                  const res = await createWinner.json();
+                  console.log(res);
+                } else if (response.status === 200) {
+                  const itemInfo = await response.json()
+                  const wins = itemInfo.wins + 1;
+                  const newTime = itemInfo.time;
+                  let updateTime = 0;
+                  if (newTime < time) {
+                    updateTime += newTime;
+                  } else if (newTime > time) {
+                    updateTime += time;
+                  }
+                  const updatedData = {
+                    wins: wins,
+                    time: updateTime,
+                  }
+                  const updateWinner = await fetch(`http://127.0.0.1:3000/winners/${item.id}`, {
+                    method: 'PUT',
+                    headers: {
+                      'Content-Type': 'application/json;charset=utf-8',
+                    },
+                    body: JSON.stringify(updatedData),
+                  });
+                  const resUpd = await updateWinner.json();
+                  console.log(resUpd);
+                }
+
+              }
+            })
           }
         })
         function close() {
@@ -329,6 +407,7 @@ class Garage extends Page {
 
     resetButton.addEventListener('click', () => {
       winArr = [];
+      eachRaceInfo = [];
       carsInfo.forEach(el => {
         const car = document.getElementById(el.id.toString());
         car!.style.transform = 'none';
