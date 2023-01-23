@@ -1,5 +1,5 @@
 import Page from '../../core/templates/page';
-import {CarsInfo, CarType, CreateCar, EachCar, UpdateCar, WinArr, WinnersStat} from '../../core/types/types';
+import { CarsInfo, CarType, CreateCar, EachCar, UpdateCar, WinArr, WinnersStat } from '../../core/types/types';
 import { CarsArray } from '../../assets/cars/carsArray';
 import './index.css';
 
@@ -16,7 +16,7 @@ class Garage extends Page {
     garageBlock.className = 'garage-block';
 
 
-    let carsInfo: CarsInfo[] = [];
+    const carsInfo: CarsInfo[] = [];
     let eachRaceInfo: EachCar[] = [];
 
     fetch('http://127.0.0.1:3000/garage')
@@ -41,11 +41,13 @@ class Garage extends Page {
           removeButton.innerText = 'Remove';
           carName.className = 'car-name';
 
+
+
           selectButton.addEventListener('click', () => {
             localStorage.setItem('selectedCarId', `${item.id}`);
             selectButton.classList.toggle('selected');
-            updateNameInput.placeholder = `${item.name}`;
-            updateColorInput.value = `${item.color}`;
+            localStorage.setItem('updateNamePlaceholder', item.name);
+            localStorage.setItem('updateColorPlaceholder', item.color);
           });
 
           removeButton.addEventListener('click', async () => {
@@ -116,7 +118,7 @@ class Garage extends Page {
           carName.innerText = item.name;
           carImage.src = CarsArray[Math.floor(Math.random() * CarsArray.length)];
 
-          let infoEl = {
+          const infoEl = {
             name: item.name,
             color: item.color,
             image: carImage.src,
@@ -151,8 +153,8 @@ class Garage extends Page {
     });
 
     const winBanner = document.createElement('div');
-    let winBannerText = document.createElement('h1');
-    let winBannerImg = document.createElement('img');
+    const winBannerText = document.createElement('h1');
+    const winBannerImg = document.createElement('img');
     winBannerImg.className = 'win-banner-img';
     winBanner.className = 'win-banner';
     winBannerText.className = 'win-banner-text';
@@ -162,18 +164,19 @@ class Garage extends Page {
 
 
     raceAllImg.addEventListener('click', async () => {
-      console.log(carsInfo);
+      console.log(carsInfo, 'это карс инфо');
 
-      let urls: string[] = [];
-      let carDetails = new Map();
+
+      const urls: string[] = [];
+      const carDetails = new Map();
 
       carsInfo.forEach(el => {
-        let url = `http://127.0.0.1:3000/engine?id=${el.id}&status=started`;
+        const url = `http://127.0.0.1:3000/engine?id=${el.id}&status=started`;
         urls.push(url);
         carDetails.set(url, el.id);
       });
       console.log(urls);
-      console.log(carDetails)
+      console.log(carDetails);
 
 
        const carsRequests = await Promise.all(urls.map(async url => {
@@ -186,63 +189,54 @@ class Garage extends Page {
          const res = await response.json();
         console.log(res, carDetails.get(url));
 
-        let eachCar = {
+        const eachCar = {
           id: carDetails.get(url),
           velocity: res.velocity,
           distance: res.distance,
-        }
+        };
 
         eachRaceInfo.push(eachCar);
 
-        let winDetails: WinArr = {
+        const winDetails: WinArr = {
           velocity: res.velocity,
           id: carDetails.get(url),
-        }
+        };
 
         winArr.push(winDetails);
 
-         let carID = carDetails.get(url);
+         const carID = carDetails.get(url);
 
           const car = document.getElementById(carID.toString());
           car!.style.transition = `${res.distance / res.velocity + 0.5 }ms ease`;
           car!.style.transform = `translate(${res.distance / 365}%, 0)`;
-
-
       }));
       console.log(winArr, 'это винар');
 
-      let winnersStat: WinnersStat[] = [];
+      const winnersStat: WinnersStat[] = [];
 
       function showWin() {
         winBanner.style.display = 'flex';
-        console.log(winArr.sort((a,b) => a.velocity < b.velocity ? 1 : -1), 'это сорт винар');
-        winArr.sort((a,b) => a.velocity < b.velocity ? 1 : -1);
-        console.log(winArr[0].id)
-        console.log(document.getElementById(winArr[0].id.toString()))
+        console.log(winArr.sort((a, b) => a.velocity < b.velocity ? 1 : -1), 'это сорт винар');
+        winArr.sort((a, b) => a.velocity < b.velocity ? 1 : -1);
+        console.log(winArr[0].id);
+        console.log(document.getElementById(winArr[0].id.toString()));
 
-        console.log(eachRaceInfo, 'это тот самый массив')
+        console.log(eachRaceInfo, 'это тот самый массив');
 
         carsInfo.forEach(el => {
           if (el.id === winArr[0].id) {
             winBannerText.innerText = `WINNER: ${document.getElementById(el.name)!.innerText}!`;
             winBannerImg.src = el.image;
             eachRaceInfo.forEach(async item => {
-              if(item.id === el.id) {
+              if (item.id === el.id) {
                 const time = (Math.round(item.distance / item.velocity) / 1000) + 0.5;
                 const winnerCar = {
                   id: item.id,
                   time: time,
-                  wins: 1
-                }
+                  wins: 1,
+                };
                 winnersStat.push(winnerCar);
-                console.log(winnersStat)
-
-                // const fetchPromise = fetch(`http://127.0.0.1:3000/winners/${item.id}`);
-                // fetchPromise.then(response => {
-                //   return response.json();
-                // }).then(rez => {
-                //   console.log(rez, 'это результат промиса');
-                // });
+                console.log(winnersStat);
 
                 const response = await fetch(`http://127.0.0.1:3000/winners/${item.id}`, {
                   method: 'GET',
@@ -252,18 +246,18 @@ class Garage extends Page {
                 });
                 console.log(response.status);
 
-                if(response.status === 404) {
-                  const createWinner = await fetch(`http://127.0.0.1:3000/winners`, {
+                if (response.status === 404) {
+                  const createWinner = await fetch('http://127.0.0.1:3000/winners', {
                     method: 'POST',
                     headers: {
                       'Content-Type': 'application/json;charset=utf-8',
                     },
                     body: JSON.stringify(winnerCar),
                   });
-                  const res = await createWinner.json();
-                  console.log(res);
+                   const res = await createWinner.json();
+                   console.log(res);
                 } else if (response.status === 200) {
-                  const itemInfo = await response.json()
+                  const itemInfo = await response.json();
                   const wins = itemInfo.wins + 1;
                   const newTime = itemInfo.time;
                   let updateTime = 0;
@@ -275,7 +269,7 @@ class Garage extends Page {
                   const updatedData = {
                     wins: wins,
                     time: updateTime,
-                  }
+                  };
                   const updateWinner = await fetch(`http://127.0.0.1:3000/winners/${item.id}`, {
                     method: 'PUT',
                     headers: {
@@ -288,9 +282,9 @@ class Garage extends Page {
                 }
 
               }
-            })
+            });
           }
-        })
+        });
         function close() {
           winBanner.style.display = 'none';
         }
@@ -317,11 +311,11 @@ class Garage extends Page {
     submitButton.innerText = 'Create';
 
     nameInput.type = 'text';
-    nameInput.placeholder = 'Car name...'
+    nameInput.placeholder = 'Car name...';
     colorInput.type = 'color';
     colorInput.value = '#ba2191';
 
-    let carCreateData: CreateCar = {
+    const carCreateData: CreateCar = {
       name: '',
       color: '',
     };
@@ -333,7 +327,7 @@ class Garage extends Page {
 
     colorInput.addEventListener('input', () => {
       console.log(colorInput.value);
-      carCreateData.color = colorInput.value
+      carCreateData.color = colorInput.value;
     });
 
     const updateForm = document.createElement('form');
@@ -345,12 +339,15 @@ class Garage extends Page {
     updateColorInput.className = 'update-color-input';
     submitUpdate.className = 'submit-update-button';
 
+    updateNameInput.placeholder = localStorage.getItem('updateNamePlaceholder')!;
+    updateColorInput.value = localStorage.getItem('updateColorPlaceholder')!;
+
     updateNameInput.type = 'text';
-    updateNameInput.placeholder = 'New name...'
+    updateNameInput.placeholder = 'New name...';
     updateColorInput.type = 'color';
     submitUpdate.innerText = 'Update';
 
-    let carUpdateData: UpdateCar = {
+    const carUpdateData: UpdateCar = {
       name: '',
       color: '',
     };
@@ -412,13 +409,13 @@ class Garage extends Page {
         const car = document.getElementById(el.id.toString());
         car!.style.transform = 'none';
         car!.style.transition = 'none';
-      })
+      });
     });
 
     const garageHeader = document.createElement('div');
     garageHeader.className = 'garage-header';
     garageHeader.append(resetButton, raceAllButton, formBlock);
-    this.container.append(garageHeader,winBanner, garageBlock);
+    this.container.append(garageHeader, winBanner, garageBlock);
   }
 
   render() {
