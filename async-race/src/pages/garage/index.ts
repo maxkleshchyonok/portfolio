@@ -22,9 +22,9 @@ class Garage extends Page {
     fetch('http://127.0.0.1:3000/garage')
       .then(response => response.json())
       .then(result => {
-        console.log(result);
+        //console.log(result);
         result.forEach((item: CarType) => {
-          console.log(item);
+          //console.log(item);
 
           const car = document.createElement('div');
           car.className = 'car-block';
@@ -51,7 +51,7 @@ class Garage extends Page {
           });
 
           removeButton.addEventListener('click', async () => {
-            const response = await fetch(`http://127.0.0.1:3000/garage/${item.id}`, {
+            await fetch(`http://127.0.0.1:3000/garage/${item.id}`, {
               method: 'DELETE',
               headers: {
                 'Accept': 'application/json',
@@ -59,9 +59,9 @@ class Garage extends Page {
               },
             });
 
-            response.json().then(data => {
-              console.log(data);
-            });
+            // response.json().then(data => {
+            //   //console.log(data);
+            // });
           });
 
           infoButtons.append(selectButton, removeButton, carName);
@@ -96,21 +96,21 @@ class Garage extends Page {
               },
             });
             const res = await response.json();
-            console.log(res);
+            //console.log(res);
             carImage.style.transition = `${res.distance / res.velocity + 0.5 }ms ease`;
             carImage.style.transform = `translate(${res.distance / 365}%, 0)`;
           });
 
           stopButton.addEventListener('click', async () => {
 
-            const response = await fetch(`http://127.0.0.1:3000/engine?id=${item.id}&status=stopped`, {
+            await fetch(`http://127.0.0.1:3000/engine?id=${item.id}&status=stopped`, {
               method: 'PATCH',
               headers: {
                 'Content-Type': 'application/json;charset=utf-8',
               },
             });
-            const resultStop = await response.json();
-            console.log(resultStop);
+            //const resultStop = await response.json();
+            //console.log(resultStop);
             carImage.style.transition = 'none';
             carImage.style.transform = 'none';
           });
@@ -164,7 +164,7 @@ class Garage extends Page {
 
 
     raceAllImg.addEventListener('click', async () => {
-      console.log(carsInfo, 'это карс инфо');
+      //console.log(carsInfo, 'это карс инфо');
 
 
       const urls: string[] = [];
@@ -175,19 +175,19 @@ class Garage extends Page {
         urls.push(url);
         carDetails.set(url, el.id);
       });
-      console.log(urls);
-      console.log(carDetails);
+      //console.log(urls);
+      //console.log(carDetails);
 
 
-       const carsRequests = await Promise.all(urls.map(async url => {
+      await Promise.all(urls.map(async url => {
         const response = await fetch(url, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json;charset=utf-8',
           },
         });
-         const res = await response.json();
-        console.log(res, carDetails.get(url));
+        const res = await response.json();
+        //console.log(res, carDetails.get(url));
 
         const eachCar = {
           id: carDetails.get(url),
@@ -204,24 +204,24 @@ class Garage extends Page {
 
         winArr.push(winDetails);
 
-         const carID = carDetails.get(url);
+        const carID = carDetails.get(url);
 
-          const car = document.getElementById(carID.toString());
-          car!.style.transition = `${res.distance / res.velocity + 0.5 }ms ease`;
-          car!.style.transform = `translate(${res.distance / 365}%, 0)`;
+        const car = document.getElementById(carID.toString());
+        car!.style.transition = `${res.distance / res.velocity + 0.5 }ms ease`;
+        car!.style.transform = `translate(${res.distance / 365}%, 0)`;
       }));
-      console.log(winArr, 'это винар');
+      //console.log(winArr, 'это винар');
 
       const winnersStat: WinnersStat[] = [];
 
       function showWin() {
         winBanner.style.display = 'flex';
-        console.log(winArr.sort((a, b) => a.velocity < b.velocity ? 1 : -1), 'это сорт винар');
+        //console.log(winArr.sort((a, b) => a.velocity < b.velocity ? 1 : -1), 'это сорт винар');
         winArr.sort((a, b) => a.velocity < b.velocity ? 1 : -1);
-        console.log(winArr[0].id);
-        console.log(document.getElementById(winArr[0].id.toString()));
+        //console.log(winArr[0].id);
+        //console.log(document.getElementById(winArr[0].id.toString()));
 
-        console.log(eachRaceInfo, 'это тот самый массив');
+        //console.log(eachRaceInfo, 'это тот самый массив');
 
         carsInfo.forEach(el => {
           if (el.id === winArr[0].id) {
@@ -236,7 +236,7 @@ class Garage extends Page {
                   wins: 1,
                 };
                 winnersStat.push(winnerCar);
-                console.log(winnersStat);
+                //console.log(winnersStat);
 
                 const response = await fetch(`http://127.0.0.1:3000/winners/${item.id}`, {
                   method: 'GET',
@@ -244,18 +244,18 @@ class Garage extends Page {
                     'Content-Type': 'application/json;charset=utf-8',
                   },
                 });
-                console.log(response.status);
+                //console.log(response.status);
 
                 if (response.status === 404) {
-                  const createWinner = await fetch('http://127.0.0.1:3000/winners', {
+                  await fetch('http://127.0.0.1:3000/winners', {
                     method: 'POST',
                     headers: {
                       'Content-Type': 'application/json;charset=utf-8',
                     },
                     body: JSON.stringify(winnerCar),
                   });
-                   const res = await createWinner.json();
-                   console.log(res);
+                  //const res = await createWinner.json();
+                  //console.log(res);
                 } else if (response.status === 200) {
                   const itemInfo = await response.json();
                   const wins = itemInfo.wins + 1;
@@ -270,15 +270,15 @@ class Garage extends Page {
                     wins: wins,
                     time: updateTime,
                   };
-                  const updateWinner = await fetch(`http://127.0.0.1:3000/winners/${item.id}`, {
+                  await fetch(`http://127.0.0.1:3000/winners/${item.id}`, {
                     method: 'PUT',
                     headers: {
                       'Content-Type': 'application/json;charset=utf-8',
                     },
                     body: JSON.stringify(updatedData),
                   });
-                  const resUpd = await updateWinner.json();
-                  console.log(resUpd);
+                  //const resUpd = await updateWinner.json();
+                  //console.log(resUpd);
                 }
 
               }
@@ -321,12 +321,12 @@ class Garage extends Page {
     };
 
     nameInput.addEventListener('input', () => {
-      console.log(nameInput.value);
+      //console.log(nameInput.value);
       carCreateData.name = nameInput.value;
     });
 
     colorInput.addEventListener('input', () => {
-      console.log(colorInput.value);
+      //console.log(colorInput.value);
       carCreateData.color = colorInput.value;
     });
 
@@ -361,7 +361,7 @@ class Garage extends Page {
     });
 
     submitUpdate.addEventListener('click', async () => {
-      const response = await fetch(`http://127.0.0.1:3000/garage/${localStorage.getItem('selectedCarId')}`, {
+      await fetch(`http://127.0.0.1:3000/garage/${localStorage.getItem('selectedCarId')}`, {
         method: 'PUT',
         headers: {
           'Accept': 'application/json',
@@ -370,9 +370,9 @@ class Garage extends Page {
         body: JSON.stringify(carUpdateData),
       });
 
-      response.json().then(data => {
-        console.log(data);
-      });
+      // response.json().then(data => {
+      //   //console.log(data);
+      // });
     });
 
     updateForm.append(updateNameInput, updateColorInput, submitUpdate);
@@ -380,7 +380,7 @@ class Garage extends Page {
     formBlock.append(createForm, updateForm);
 
     submitButton.addEventListener('click', async () => {
-      const response = await fetch('http://127.0.0.1:3000/garage', {
+      await fetch('http://127.0.0.1:3000/garage', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -389,9 +389,9 @@ class Garage extends Page {
         body: JSON.stringify(carCreateData),
       });
 
-      response.json().then(data => {
-        console.log(data);
-      });
+      // response.json().then(data => {
+      //   //console.log(data);
+      // });
     });
 
     const resetButton = document.createElement('button');

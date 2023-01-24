@@ -1,0 +1,53 @@
+.sort-time {
+  width: 100px;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  background: #e5ba0d;
+  margin-right: 3%;
+  color: #761f8d;
+  margin-left: 35%;
+}
+
+.sort-wins {
+  width: 100px;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  background: #e5ba0d;
+  margin-right: 3%;
+  color: #761f8d;
+}
+
+.all-info {
+  width: 100px;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  background: #e5ba0d;
+  margin-right: 3%;
+  color: #761f8d;
+}
+
+.winners-table {
+  margin-left: 22%;
+  margin-top: 5%;
+  width: 50%;
+  background: rgba(126, 105, 248, 0.77);
+  border-radius: 20px;
+}
+.winners-table .table-item {
+  display: flex;
+  justify-content: space-between;
+}
+.winners-table .table-item .car-image {
+  width: 10%;
+}
+.winners-table .table-item .item-wins {
+  margin-right: 5%;
+}
+.winners-table .table-item .item-name {
+  color: rgba(10, 225, 23, 0.77);
+}
+
+/*# sourceMappingURL=index.css.map */

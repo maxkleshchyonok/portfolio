@@ -17,6 +17,7 @@
     "@typescript-eslint"
   ],
   "rules": {
+    "@typescript-eslint/no-non-null-assertion": "off",
     "no-plusplus": "off",
     "no-console": "warn",
     "max-len": ["warn", { "code": 120 }],
