@@ -1,4 +1,4 @@
-# Hello! This is my small portfolio of my projects. Switch between branches to see then all.
+# Hello! This is my small portfolio of my projects. Switch between branches to see them all.
 > ## Short description: 
 > - Songbird (Guess birds by their voices)
 > - codejam-the-gem-puzzle (Gem puzzle game)
